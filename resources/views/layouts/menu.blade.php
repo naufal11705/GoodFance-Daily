@@ -1,7 +1,7 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light text-white shadow-none py-2">
   <!-- Container wrapper -->
-  <div class="container-fluid" style="margin-left: 30px; margin-right: 30px;">
+  <div class="container-fluid" style="margin-left: 55px; margin-right: 50px;">
       <!-- Navbar brand -->
       <a class="navbar-brand mt-lg-0 fw-bold" href="#">
         GoodFance
@@ -22,8 +22,8 @@
     <div class="d-flex align-items-center">
 
       <div class="btn-group shadow-none mt-2 mt-lg-0 mt-md-0 mt-xl-0">
-        <a style="width: 100px; font-size: 14px;" href="/signin" class="btn btn-outline-dark align-self-center mx-2 mx-lg-3 mx-md-2 mx-xl-3 rounded fw-semibold">Sign in</a>
-        <a style="width: 100px; font-size: 14px;" href="/signup" class="btn btn-dark align-self-center me-2 rounded fw-semibold">Sign up</a>
+        <a style="width: 100px; font-size: 14px;" href="{{ route('login') }}" class="btn btn-outline-dark align-self-center mx-2 mx-lg-3 mx-md-2 mx-xl-3 rounded fw-semibold">Sign in</a>
+        <a style="width: 100px; font-size: 14px;" href="{{ route('register') }}" class="btn btn-dark align-self-center me-2 rounded fw-semibold">Sign up</a>
       </div>
 
       <!-- Account -->

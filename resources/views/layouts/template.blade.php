@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('style.css') }}"/>
+
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -21,6 +21,10 @@
         width: 100%;
         max-height: 300px !important;
         border-radius: 25px 25px 25px 25px;
+      }
+      .form-control:focus {
+        border-color: #0f3c4c;
+        box-shadow: 0 0 0 0.2rem rgba(147, 147, 147, 0.8);
       }
     </style>
   </head>
