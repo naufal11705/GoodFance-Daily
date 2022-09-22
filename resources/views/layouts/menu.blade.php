@@ -3,7 +3,7 @@
   <!-- Container wrapper -->
   <div class="container-fluid" style="margin-left: 55px; margin-right: 50px;">
       <!-- Navbar brand -->
-      <a class="navbar-brand mt-lg-0 fw-bold" href="#">
+      <a class="navbar-brand mt-lg-0 fw-bold" href="/">
         GoodFance
       </a>
 
@@ -35,23 +35,7 @@
           <i class="fa-solid fa-caret-down"></i>
         </a>
         <ul class="menu-dropdown" style="width: 190px;">
-          <li>
-            <a style="color: black;" href="/signin">
-              <button style="margin-top: 10px; margin-bottom: 3px;" type="button" class="btn btn-primary btn-sm shadow-none w-100 fw-semibold">
-                Sign in
-              </button>
-            </a>
-          </li>
-          <li><a class="text-dark text-center">OR</a></li>
-          <li>
-            <a style="color: black;" href="/signup">
-              <button style="margin-top: 3px; margin-bottom: 10px;" type="button" class="btn btn-primary btn-sm shadow-none w-100 fw-semibold">
-                Sign up
-              </button>
-            </a>
-          </li>
-          <li><hr class="dropdown-divider text-white-50 bg-secondary"></li>
-          <li><a style="padding-top: 7px;" href="#">Account</a></li>
+          <li><a href="#">Account</a></li>
           <li><a style="padding-top: 2.5px;" href="#">Become a seller</a></li>
           <li>
             <a style="padding-top: 2.5px; padding-bottom: 7px;" href="{{ route('logout') }}"
@@ -73,7 +57,7 @@
   </div>
   <!-- Cart -->
   <button type="button" class="btn btn-transparent align-self-center shadow-none mt-2 mt-lg-0 mt-md-0 mt-xl-0">
-    <a class="text-dark fs-5" href="#">
+    <a class="text-dark fs-5" href="/cart">
       <i class="fas fa-shopping-cart"></i>
     </a>
   </button>
