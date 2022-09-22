@@ -21,14 +21,17 @@
     <!-- Right elements -->
     <div class="d-flex align-items-center">
 
+      @guest
       <div class="btn-group shadow-none mt-2 mt-lg-0 mt-md-0 mt-xl-0">
         <a style="width: 100px; font-size: 14px;" href="{{ route('login') }}" class="btn btn-outline-dark align-self-center mx-2 mx-lg-3 mx-md-2 mx-xl-3 rounded fw-semibold">Sign in</a>
         <a style="width: 100px; font-size: 14px;" href="{{ route('register') }}" class="btn btn-dark align-self-center me-2 rounded fw-semibold">Sign up</a>
       </div>
+      @endguest
 
       <!-- Account -->
-      <!-- <div class="dropdown hover ms-3" style="z-index: 2;">
-        <a class="bg-transparent text-white" href="#">Hello, user <br><span class="fw-bold">Account Settings</span>
+      @auth
+      <div class="dropdown hover ms-3" style="z-index: 2;">
+        <a class="bg-transparent text-black" href="#">Hello, {{ Auth::user()->name }} <br><span class="fw-bold">Account Settings</span>
           <i class="fa-solid fa-caret-down"></i>
         </a>
         <ul class="menu-dropdown" style="width: 190px;">
@@ -50,9 +53,20 @@
           <li><hr class="dropdown-divider text-white-50 bg-secondary"></li>
           <li><a style="padding-top: 7px;" href="#">Account</a></li>
           <li><a style="padding-top: 2.5px;" href="#">Become a seller</a></li>
-          <li><a style="padding-top: 2.5px; padding-bottom: 7px;" href="#">Sign out</a></li>
+          <li>
+            <a style="padding-top: 2.5px; padding-bottom: 7px;" href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">
+              {{ __('Logout') }}
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+              @csrf
+            </form>
+          </li>
         </ul>
-      </div>-->
+      </div>
+      @endauth
 
       
     <!-- Right elements -->
