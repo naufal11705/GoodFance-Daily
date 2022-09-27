@@ -32,3 +32,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::view('/cart', 'cart');
+Route::view('/detail_produk', 'detail_produk');

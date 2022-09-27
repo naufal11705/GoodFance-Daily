@@ -293,22 +293,20 @@
   <!-- end produk terbaru -->
   <!-- tentang toko -->
   <hr>
-  <div class="row mt-4 px-5">
-    <div class="col">
-      <h5 class="text-center">GoodFance</h5>
-      <p>
-        GoodFance adalah e-commerce baru dari Indonesia yang menjual produk produk tentang fashion. Website ini sangat
-      </p>
-      <p>
-        Toko adalah demo membangun toko online menggunakan laravel framework. Di dalam demo ini terdapat user bisa menginput data kategori, produk dan transaksi.
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic laborum aliquam dolorum sequi nulla maiores quos incidunt veritatis numquam suscipit. Cumque dolore rem obcaecati. Eos quod ad non veritatis assumenda.
-      </p>
-      <p class="text-center">
-        <a href="" class="btn btn-outline-secondary">
-          Baca Selengkapnya
-        </a>      
-      </p>
-    </div>
+  <div class="mt-4 px-5">
+    <h5 class="text-center">GoodFance</h5>
+    <p>
+      GoodFance adalah e-commerce baru dari Indonesia yang menjual produk produk tentang fashion. Website ini sangat
+    </p>
+    <p>
+      Toko adalah demo membangun toko online menggunakan laravel framework. Di dalam demo ini terdapat user bisa menginput data kategori, produk dan transaksi.
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic laborum aliquam dolorum sequi nulla maiores quos incidunt veritatis numquam suscipit. Cumque dolore rem obcaecati. Eos quod ad non veritatis assumenda.
+    </p>
+    <p class="text-center">
+      <a href="" class="btn btn-outline-secondary">
+        Baca Selengkapnya
+      </a>      
+    </p>
   </div>
   <!-- end tentang toko -->
   @endsection
