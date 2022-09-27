@@ -3,8 +3,12 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TransaksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,12 +24,17 @@ use App\Http\Controllers\DashboardController;
 Route::get('/', [\App\Http\Controllers\HomePageController::class,'index']);
 Route::get('/about', [\App\Http\Controllers\HomePageController::class,'about']);
 Route::get('/kontak', [\App\Http\Controllers\HomePageController::class,'kontak']);
-Route::get('/kategori', [\App\Http\Controllers\HomePageController::class,'kategori']);
+Route::get('/category', [\App\Http\Controllers\HomePageController::class,'kategori']);
 
 Route::group(['prefix' => 'admin'], function() {
     Route::get('/', [\App\Http\Controllers\DashboardController::class,'index']);
     
 });
+
+Route::resource('kategori', \App\Http\Controllers\KategoriController::class);
+Route::resource('produk', \App\Http\Controllers\ProdukController::class);
+Route::resource('customer', \App\Http\Controllers\CustomerController::class);
+Route::resource('transaksi', \App\Http\Controllers\TransaksiController::class);
 
 Auth::routes();
 

@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h1>Selamat anda kena prank!!</h1>
+      <h1>Kontak Kami</h1>
     </div>
   </div>
 </div>
