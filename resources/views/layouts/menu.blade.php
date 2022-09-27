@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light text-white shadow-none py-2">
+<nav class="navbar navbar-expand-lg navbar-white bg-white text-white shadow-none py-2">
   <!-- Container wrapper -->
   <div class="container-fluid" style="margin-left: 55px; margin-right: 50px;">
       <!-- Navbar brand -->
