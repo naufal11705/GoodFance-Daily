@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('phone');//no tlp
+            $table->string('phone')->nullable();//no tlp
             $table->text('alamat')->nullable();//alamat
             $table->string('role')->default('member');//member non admin
             $table->string('foto')->nullable();//foto profil

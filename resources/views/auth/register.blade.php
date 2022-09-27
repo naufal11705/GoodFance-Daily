@@ -36,6 +36,22 @@
                                     <input type="text" name="email" id="email" class="form-control">
                                 </div>
                                 <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input type="text" name="phone" id="phone" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="role">Role</label>
+                                    <input type="text" name="role" id="role" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Alamat">Alamat</label>
+                                    <input type="text" name="alamat" id="Alamat" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="status">Status</label>
+                                    <input type="text" name="status" id="status" class="form-control">
+                                </div>
+                                <div class="form-group">
                                     <label for="password">Password</label>
                                     <input type="password" name="password" id="password" class="form-control">
                                 </div>
