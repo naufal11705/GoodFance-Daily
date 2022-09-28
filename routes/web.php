@@ -38,6 +38,10 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('profil', [\App\Http\Controllers\UserController::class,'index']);
     Route::get('setting', [\App\Http\Controllers\UserController::class,'setting']);
 
+    Route::resource('cart', App\Http\Controllers\CartController::class);
+    Route::patch('kosongkan/{id}', [\App\Http\Controllers\CartController::class,'kosongkan']);
+    Route::resource('cartdetail', App\Http\Controllers\CartDetailController::class);
+
     Route::get('laporan', [\App\Http\Controllers\LaporanController::class,'index']);
     Route::get('proseslaporan', [\App\Http\Controllers\LaporanController::class,'proses']);
 
@@ -61,6 +65,5 @@ Route::group(['prefix' => 'admin'], function() {
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::view('/cart', 'cart');
 Route::view('/detail_produk', 'detail_produk');
 
