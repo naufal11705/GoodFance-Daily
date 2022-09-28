@@ -25,7 +25,7 @@
       }
       .form-control:focus {
         border-color: #0f3c4c;
-        box-shadow: 0 0 0 0.2rem rgba(147, 147, 147, 0.8);
+        box-shadow: 0 0 0 0 rgba(147, 147, 147, 0.8);
       }
       .dropdown{
         width: 140px;
