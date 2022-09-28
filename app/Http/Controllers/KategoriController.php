@@ -2,13 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Image;
-use App\Models\Kategori;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Storage;
-use App\Http\Controllers\ImageController;
+use App\Models\Kategori;
 
 class KategoriController extends Controller
 {
@@ -53,7 +48,7 @@ class KategoriController extends Controller
         $itemuser = $request->user();//kita panggil data user yang sedang login
         $inputan = $request->all();//kita masukkan semua variabel data yang diinput ke variabel $inputan
         $inputan['user_id'] = $itemuser->id;
-        $inputan['slug_kategori'] = Str::slug($request->slug_kategori);//kita buat slug biar pemisahnya menjadi strip (-)
+        $inputan['slug_kategori'] = \Str::slug($request->slug_kategori);//kita buat slug biar pemisahnya menjadi strip (-)
         //slug kita gunakan nanti pas buka produk per kategori
         $inputan['status'] = 'publish';//status kita set langsung publish saja
         $itemkategori = Kategori::create($inputan);
@@ -157,27 +152,6 @@ class KategoriController extends Controller
             return back()->with('success', 'Image berhasil diupload');
         } else {
             return back()->with('error', 'Kategori tidak ditemukan');
-        }
-    }
-
-    public function deleteimage(Request $request, $id) {
-        $itemuser = $request->user();
-        $itemkategori = Kategori::where('user_id', $itemuser->id)
-                                ->where('id', $id)
-                                ->first();
-        if ($itemkategori) {
-            // kita cari dulu database berdasarkan url gambar
-            $itemgambar = \App\Image::where('url', $itemkategori->foto)->first();
-            // hapus imagenya
-            if ($itemgambar) {
-                Storage::delete($itemgambar->url);
-                $itemgambar->delete();
-            }
-            // baru update foto kategori
-            $itemkategori->update(['foto' => null]);
-            return back()->with('success', 'Data berhasil dihapus');
-        } else {
-            return back()->with('error', 'Data tidak ditemukan');
         }
     }
 }
