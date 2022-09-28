@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Produk;
 use App\Models\Kategori;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use App\Http\Controllers\Controller;
+
 
 class ProdukController extends Controller
 {
@@ -71,7 +73,9 @@ class ProdukController extends Controller
      */
     public function show($id)
     {
-        $data = array('title' => 'Foto Produk');
+        $itemproduk = Produk::findOrFail($id);
+        $data = array('title' => 'Form Edit Produk',
+                'itemproduk' => $itemproduk );
         return view('produk.show', $data);
     }
 

@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Image;
 use App\Models\Kategori;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\ImageController;
 
 class KategoriController extends Controller
 {
@@ -136,7 +141,7 @@ class KategoriController extends Controller
     }
     public function uploadimage(Request $request) {
         $this->validate($request, [
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'kategori_id' => 'required',
         ]);
         $itemuser = $request->user();
@@ -165,7 +170,7 @@ class KategoriController extends Controller
             $itemgambar = \App\Image::where('url', $itemkategori->foto)->first();
             // hapus imagenya
             if ($itemgambar) {
-                \Storage::delete($itemgambar->url);
+                Storage::delete($itemgambar->url);
                 $itemgambar->delete();
             }
             // baru update foto kategori

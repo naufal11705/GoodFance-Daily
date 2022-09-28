@@ -190,15 +190,6 @@
               <input type="text" name="nama_produk" id="nama_produk" class="form-control">
             </div>
             <div class="form-group">
-              <label for="nama_produk">Kategori Produk</label>
-              <select class="custom-select">
-                <option disabled selected>Pilih kategori produk</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </div>
-            <div class="form-group">
               <label for="slug_produk">Slug Produk</label>
               <input type="text" name="slug_produk" id="slug_produk" class="form-control">
             </div>

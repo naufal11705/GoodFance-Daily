@@ -13,30 +13,45 @@
           </div>
         </div>
         <div class="card-body">
+          @if(count($errors) > 0)
+          @foreach($errors->all() as $error)
+              <div class="alert alert-warning">{{ $error }}</div>
+          @endforeach
+          @endif
+          @if ($message = Session::get('error'))
+              <div class="alert alert-warning">
+                  <p>{{ $message }}</p>
+              </div>
+          @endif
+          @if ($message = Session::get('success'))
+              <div class="alert alert-success">
+                  <p>{{ $message }}</p>
+              </div>
+          @endif
           <div class="table-responsive">
             <table class="table">
               <tr>
                 <td>Kode Produk</td>
                 <td>
-                  PRO-12
+                  {{$itemproduk->kode_produk}}
                 </td>
               </tr>
               <tr>
                 <td>Nama Produk</td>
                 <td>
-                  Baju Anak
+                  {{$itemproduk->nama_produk}}
                 </td>
               </tr>
               <tr>
                 <td>Qty</td>
                 <td>
-                  12 pcs
+                  {{$itemproduk->qty}}
                 </td>
               </tr>
               <tr>
                 <td>Harga</td>
                 <td>
-                  Rp. 15.0000
+                  Rp.{{$itemproduk->harga}}
                 </td>
               </tr>
             </table>
@@ -66,6 +81,7 @@
           </form>
         </div>
         <div class="card-body">
+          
           <div class="row">
             <div class="col-md-3 mb-2">
               <img src="{{ asset('images/slide1.jpg') }}" alt="image" class="img-thumbnail mb-2">
@@ -74,47 +90,6 @@
               </button>
             </div>
 
-            <div class="col-md-3 mb-2">
-              <img src="{{ asset('images/slide1.jpg') }}" alt="image" class="img-thumbnail mb-2">
-              <button class="btn-sm btn-danger btn">
-                Delete
-              </button>
-            </div>
-
-            <div class="col-md-3 mb-2">
-              <img src="{{ asset('images/slide1.jpg') }}" alt="image" class="img-thumbnail mb-2">
-              <button class="btn-sm btn-danger btn">
-                Delete
-              </button>
-            </div>
-
-            <div class="col-md-3 mb-2">
-              <img src="{{ asset('images/slide1.jpg') }}" alt="image" class="img-thumbnail mb-2">
-              <button class="btn-sm btn-danger btn">
-                Delete
-              </button>
-            </div>
-
-            <div class="col-md-3 mb-2">
-              <img src="{{ asset('images/slide1.jpg') }}" alt="image" class="img-thumbnail mb-2">
-              <button class="btn-sm btn-danger btn">
-                Delete
-              </button>
-            </div>
-
-            <div class="col-md-3 mb-2">
-              <img src="{{ asset('images/slide1.jpg') }}" alt="image" class="img-thumbnail mb-2">
-              <button class="btn-sm btn-danger btn">
-                Delete
-              </button>
-            </div>
-
-            <div class="col-md-3 mb-2">
-              <img src="{{ asset('images/slide1.jpg') }}" alt="image" class="img-thumbnail mb-2">
-              <button class="btn-sm btn-danger btn">
-                Delete
-              </button>
-            </div>
           </div>
         </div>
       </div>
