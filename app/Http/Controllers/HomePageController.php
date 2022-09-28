@@ -4,14 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Produk; 
 use Illuminate\Http\Request;
-<<<<<<< Updated upstream
 use App\Http\Controllers\Controller;
-=======
-use App\Produk;
-use App\Kategori;
-use App\Slideshow;
-use App\ProdukPromo;
->>>>>>> Stashed changes
+use App\Models\Kategori;
+use App\Models\Slideshow;
+use App\Models\ProdukPromo;
 
 class HomepageController extends Controller
 {
@@ -43,7 +39,6 @@ class HomepageController extends Controller
         $data = array('title' => 'Kategori Produk');
         return view('homepage.kategori', $data);
     }
-<<<<<<< Updated upstream
     public function produkdetail($id) {
         $itemproduk = Produk::where('slug_produk', $id)
                             ->where('status', 'publish')
@@ -68,16 +63,3 @@ class HomepageController extends Controller
         }
     }
 }
-=======
-
-    public function produk() {
-        $data = array('title' => 'Produk');
-        return view('homepage.produk', $data);
-    }
-
-    public function produkdetail($id) {
-        $data = array('title' => 'Produk Detail');
-        return view('homepage.produkdetail', $data);
-    }
-}
->>>>>>> Stashed changes
