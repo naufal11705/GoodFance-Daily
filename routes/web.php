@@ -12,6 +12,7 @@ use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\SlideshowController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,9 +49,12 @@ Route::group(['prefix' => 'admin'], function() {
     Route::delete('image/{id}', [\App\Http\Controllers\ImageController::class,'destroy']);
     Route::post('imagekategori',[\App\Http\Controllers\KategoriController::class,'uploadimage']);
     Route::delete('imagekategori/{id}', [\App\Http\Controllers\KategoriController::class,'deleteimage']);
+
+    Route::resource('slideshow',\App\Http\Controllers\SlideshowController::class);
 });
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::view('/cart', 'cart');
 Route::view('/detail_produk', 'detail_produk');
+
