@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Slideshow;
+use App\Models\Slideshow;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\ImageController;
 
 class SlideshowController extends Controller
 {
