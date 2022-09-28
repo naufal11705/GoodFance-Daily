@@ -5,28 +5,28 @@
         color: orange;
     }
     body{
-        background-color: #ecedee
+        background-color: #ecedee;
     }
     .card{
         border: none;
-        overflow: hidden
+        overflow: hidden;
     }
     .thumbnail_images ul{
         list-style: none;
         justify-content: center;
         display: flex;
         align-items: center;
-        margin-top:10px
+        margin-top: 10px;
     }
     .thumbnail_images ul li{
         margin: 5px;
         padding: 10px;
         border: 2px solid #eee;
         cursor: pointer;
-        transition: all 0.5s
+        transition: all 0.5s;
     }
     .thumbnail_images ul li:hover{
-        border: 2px solid #000
+        border: 2px solid #000;
     }
     .main_image{
         display: flex;
@@ -35,31 +35,22 @@
         border-bottom: 1px solid #eee;
         height: 400px;
         width: 100%;
-        overflow: hidden
-    }
-    .heart{
-        height: 29px;
-        width: 29px;
-        background-color: #eaeaea;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center
+        overflow: hidden;
     }
     .content p{
-        font-size: 12px
+        font-size: 12px;
     }
     .ratings span{
         font-size: 14px;
-        margin-left: 12px
+        margin-left: 12px;
     }
     .colors{
-        margin-top: 5px
+        margin-top: 5px;
     }
     .colors ul{
         list-style: none;
         display: flex;
-        padding-left: 0px
+        padding-left: 0px;
     }
     .colors ul li{
         height: 20px;
@@ -67,25 +58,29 @@
         display: flex;
         border-radius: 50%;
         margin-right: 10px;
-        cursor: pointer
+        cursor: pointer;
     }
     .colors ul li:nth-child(1){
-        background-color: #6c704d
+        background-color: #6c704d;
     }
     .colors ul li:nth-child(2){
-        background-color: #96918b
+        background-color: #96918b;
     }
     .colors ul li:nth-child(3){
-        background-color: #68778e
+        background-color: #68778e;
     }
     .colors ul li:nth-child(4){
-        background-color: #263f55
+        background-color: #263f55;
     }
     .colors ul li:nth-child(5){
-        background-color: black
+        background-color: black;
     }
     .right-side{
-        position: relative
+        position: relative;
+    }
+    .input-group .form-select:focus{
+        border-color: #0f3c4c;
+        box-shadow: 0 0 0 0.2rem rgba(147, 147, 147, 0.8);
     }
 </style>
 
@@ -115,13 +110,10 @@
                     </div>	
                 </div>	
             </div>	
-            <div class="col-md-6">	
+            <div class="col-md-6 bg-dark text-white">	
                 <div class="p-3 right-side">	
                     <div class="d-flex justify-content-between align-items-center">	
-                        <h3>IIlana</h3>	
-                        <span class="heart">
-                            <i class='bx bx-heart'></i>
-                        </span>	
+                        <h3>IIlana</h3>
                     </div>	
                     <div class="mt-2 pr-3 content">	
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>	
@@ -149,9 +141,20 @@
                             </ul>	
                         </div>	
                     </div>	
+                    <div class="quantity">
+                        <span class="fw-bold">Quantity</span>
+                        <div class="input-group input-group-sm mb-3" style="width: 21.5%;">
+                            <label class="input-group-text" for="inputGroupSelect01">Qty</label>
+                            <select class="form-select" id="inputGroupSelect01">
+                                <option selected value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="buttons d-flex flex-row mt-5 gap-3">	
-                        <button class="btn btn-outline-dark">Buy Now</button>	
-                        <button class="btn btn-dark">Add to Basket</button>	
+                        <button class="btn btn-outline-light">Buy Now</button>	
+                        <button class="btn btn-light">Add to Basket</button>	
                     </div>
                 </div>	
             </div>	
