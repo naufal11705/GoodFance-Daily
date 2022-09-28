@@ -12,7 +12,11 @@ use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TransaksiController;
+<<<<<<< Updated upstream
 use App\Http\Controllers\SlideshowController;
+=======
+use App\Http\Controllers\ProdukPromoController;
+>>>>>>> Stashed changes
 
 /*
 |--------------------------------------------------------------------------
@@ -49,9 +53,15 @@ Route::group(['prefix' => 'admin'], function() {
     Route::delete('image/{id}', [\App\Http\Controllers\ImageController::class,'destroy']);
     Route::post('imagekategori',[\App\Http\Controllers\KategoriController::class,'uploadimage']);
     Route::delete('imagekategori/{id}', [\App\Http\Controllers\KategoriController::class,'deleteimage']);
+<<<<<<< Updated upstream
 
     Route::resource('slideshow',\App\Http\Controllers\SlideshowController::class);
+=======
+    Route::resource('promo',\App\Http\Controllers\ProdukPromoController::class);
+    Route::get('loadprodukasync/{id}', [\App\Http\Controllers\ProdukPromoController::class,'loadasync']);
+>>>>>>> Stashed changes
 });
+
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
