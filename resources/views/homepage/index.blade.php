@@ -5,13 +5,13 @@
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="tales" alt="...">
+        <img src="carousel_img/Frame1.png" class="tales" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp" class="tales" alt="...">
+        <img src="carousel_img/Frame2.png" class="tales" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp" class="tales" alt="...">
+        <img src="carousel_img/Frame3.png" class="tales" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
