@@ -58,8 +58,8 @@
     <div class="row row-cols-1 row-cols-lg-5 g-2 g-lg-3 ms-2 ms-lg-2 ms-md-2 ms-xl-2">
       <div class="col">
         <div class="card" style="height: 405px;">
-          <div style="height: 275px; max-width: 270px; display: flex; align-items: center;">
-            <img src="img/photo2.png" class="card-img-top" style="max-height: 275px;" alt="...">
+          <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
+            <img src="img/photo2.png" class="card-img-top" style="max-height: 190px; width: 100%;" alt="...">
           </div>
           <div class="card-body">
             <div>
@@ -80,12 +80,14 @@
               <span>5.0</span>
             </div>
           </div>
+          <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
+          <a type="button" class="btn btn-dark btn-sm mb-2 mx-3">Buy now</a>
         </div>
       </div>
       <div class="col">
         <div class="card" style="height: 405px;">
-          <div style="height: 275px; max-width: 270px; display: flex; align-items: center;">
-            <img src="images/slide2.jpg" class="card-img-top" style="max-height: 275px;" alt="...">
+          <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
+            <img src="images/slide2.jpg" class="card-img-top" style="max-height: 190px; width: 100%;" alt="...">
           </div>
           <div class="card-body">
             <div>
@@ -106,12 +108,14 @@
               <span>5.0</span>
             </div>
           </div>
+          <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
+          <a type="button" class="btn btn-dark btn-sm mb-2 mx-3">Buy now</a>
         </div>
       </div>
       <div class="col">
         <div class="card" style="height: 405px;">
-          <div style="height: 275px; max-width: 270px; display: flex; align-items: center;">
-            <img src="images/slide3.jpg" class="card-img-top" style="max-height: 275px;" alt="...">
+          <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
+            <img src="images/slide3.jpg" class="card-img-top" style="max-height: 190px; width: 100%;" alt="...">
           </div>
           <div class="card-body">
             <div>
@@ -132,12 +136,14 @@
               <span>5.0</span>
             </div>
           </div>
+          <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
+          <a type="button" class="btn btn-dark btn-sm mb-2 mx-3">Buy now</a>
         </div>
       </div>
       <div class="col">
         <div class="card" style="height: 405px;">
-          <div style="height: 275px; max-width: 270px; display: flex; align-items: center;">
-            <img src="images/slide3.jpg" class="card-img-top" style="max-height: 275px;" alt="...">
+          <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
+            <img src="images/slide3.jpg" class="card-img-top" style="max-height: 190px; width: 100%;" alt="...">
           </div>
           <div class="card-body">
             <div>
@@ -158,12 +164,14 @@
               <span>5.0</span>
             </div>
           </div>
+          <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
+          <a type="button" class="btn btn-dark btn-sm mb-2 mx-3">Buy now</a>
         </div>
       </div>
       <div class="col">
         <div class="card" style="height: 405px;">
-          <div style="height: 275px; max-width: 270px; display: flex; align-items: center;">
-            <img src="images/slide3.jpg" class="card-img-top" style="max-height: 275px;" alt="...">
+          <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
+            <img src="images/slide3.jpg" class="card-img-top" style="max-height: 190px; width: 100%;" alt="...">
           </div>
           <div class="card-body">
             <div>
@@ -184,6 +192,8 @@
               <span>5.0</span>
             </div>
           </div>
+          <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
+          <a type="button" class="btn btn-dark btn-sm mb-2 mx-3">Buy now</a>
         </div>
       </div>
     </div>
@@ -195,8 +205,8 @@
     <div class="row row-cols-1 row-cols-lg-5 g-2 g-lg-3 ms-2 ms-lg-2 ms-md-2 ms-xl-2">
       <div class="col">
         <div class="card" style="height: 405px;">
-          <div style="height: 275px; max-width: 270px; display: flex; align-items: center;">
-            <img src="img/photo2.png" class="card-img-top" style="max-height: 275px;" alt="...">
+          <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
+            <img src="img/photo2.png" class="card-img-top" style="max-height: 190px; width: 100%;" alt="...">
           </div>
           <div class="card-body">
             <div>
@@ -210,12 +220,14 @@
               <span>5.0</span>
             </div>
           </div>
+          <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
+          <a type="button" class="btn btn-dark btn-sm mb-2 mx-3">Buy now</a>
         </div>
       </div>
       <div class="col">
         <div class="card" style="height: 405px;">
-          <div style="height: 275px; max-width: 270px; display: flex; align-items: center;">
-            <img src="images/slide2.jpg" class="card-img-top" style="max-height: 275px;" alt="...">
+          <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
+            <img src="images/slide2.jpg" class="card-img-top" style="max-height: 190px; width: 100%;" alt="...">
           </div>
           <div class="card-body">
             <div>
@@ -229,12 +241,14 @@
               <span>5.0</span>
             </div>
           </div>
+          <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
+          <a type="button" class="btn btn-dark btn-sm mb-2 mx-3">Buy now</a>
         </div>
       </div>
       <div class="col">
         <div class="card" style="height: 405px;">
-          <div style="height: 275px; max-width: 270px; display: flex; align-items: center;">
-            <img src="images/slide3.jpg" class="card-img-top" style="max-height: 275px;" alt="...">
+          <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
+            <img src="images/slide3.jpg" class="card-img-top" style="max-height: 190px; width: 100%;" alt="...">
           </div>
           <div class="card-body">
             <div>
@@ -248,12 +262,14 @@
               <span>5.0</span>
             </div>
           </div>
+          <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
+          <a type="button" class="btn btn-dark btn-sm mb-2 mx-3">Buy now</a>
         </div>
       </div>
       <div class="col">
         <div class="card" style="height: 405px;">
-          <div style="height: 275px; max-width: 270px; display: flex; align-items: center;">
-            <img src="images/slide3.jpg" class="card-img-top" style="max-height: 275px;" alt="...">
+          <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
+            <img src="images/slide3.jpg" class="card-img-top" style="max-height: 190px; width: 100%;" alt="...">
           </div>
           <div class="card-body">
             <div>
@@ -267,12 +283,14 @@
               <span>5.0</span>
             </div>
           </div>
+          <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
+          <a type="button" class="btn btn-dark btn-sm mb-2 mx-3">Buy now</a>
         </div>
       </div>
       <div class="col">
         <div class="card" style="height: 405px;">
-          <div style="height: 275px; max-width: 270px; display: flex; align-items: center;">
-            <img src="images/slide3.jpg" class="card-img-top" style="max-height: 275px;" alt="...">
+          <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
+            <img src="images/slide3.jpg" class="card-img-top" style="max-height: 190px; width: 100%;" alt="...">
           </div>
           <div class="card-body">
             <div>
@@ -286,6 +304,8 @@
               <span>5.0</span>
             </div>
           </div>
+          <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
+          <a type="button" class="btn btn-dark btn-sm mb-2 mx-3">Buy now</a>
         </div>
       </div>
     </div>
