@@ -38,11 +38,10 @@
         overflow: hidden;
     }
     .content p{
-        font-size: 12px;
+        font-size: 14px;
     }
     .ratings span{
         font-size: 14px;
-        margin-left: 12px;
     }
     .colors{
         margin-top: 5px;
@@ -113,7 +112,7 @@
             <div class="col-md-6 bg-dark text-white">	
                 <div class="p-3 right-side">	
                     <div class="d-flex justify-content-between align-items-center">	
-                        <h3>IIlana</h3>
+                        <h3>Judul</h3>
                     </div>	
                     <div class="mt-2 pr-3 content">	
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>	
@@ -121,13 +120,12 @@
                     <h3>$430.99</h3>	
                     <div class="ratings d-flex flex-row align-items-center">	
                         <div class="d-flex flex-row">	
-                            <i class='bx bxs-star' ></i>	
-                            <i class='bx bxs-star' ></i>	
-                            <i class='bx bxs-star' ></i>	
-                            <i class='bx bxs-star' ></i>	
-                            <i class='bx bx-star' ></i>	
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
                         </div>	
-                        <span>441 reviews</span>	
                     </div>	
                     <div class="mt-5">	
                         <span class="fw-bold">Color</span>	
