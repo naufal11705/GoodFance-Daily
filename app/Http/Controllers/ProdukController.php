@@ -21,7 +21,7 @@ class ProdukController extends Controller
         $itemproduk = Produk::orderBy('created_at', 'desc')->paginate(20);
         $data = array('title' => 'Produk',
                     'itemproduk' => $itemproduk);
-        return view('produk.index', $data)->with('no', ($request->input('page', 1) - 1) * 20);
+        return view('produk.index', $data)->with('no', ($request->input('page', 1) - 1));
     }
 
     /**
@@ -147,6 +147,7 @@ class ProdukController extends Controller
             return back()->with('error', 'Data gagal dihapus');
         }
     }
+    
     public function loadasync($id) {
         $itemproduk = Produk::findOrFail($id);
         $respon = [
