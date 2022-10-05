@@ -68,4 +68,6 @@ Route::group(['prefix' => 'admin'], function() {
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::view('/detail_produk', 'detail_produk');
+Route::view('/checkout', 'checkout');
+Route::view('/cart_detail', 'cart_detail');
 

@@ -89,6 +89,19 @@
       .dropdown.hover:hover li:first-child, .dropdown.toggle > input:checked ~ ul li:first-child{
         margin-top: 15px;
       }
+      .btn-ubah:hover{
+        text-decoration: underline;
+      }
+      @media (min-width: 992px) {
+        .card-3{
+          margin-top: -50px;
+        }
+      }
+      @media (min-width: 576px) {
+        .card-2{
+          width: 100%;
+        }
+      }
     </style>
   </head>
   <body>
