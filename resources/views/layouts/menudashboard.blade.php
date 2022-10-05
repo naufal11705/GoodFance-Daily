@@ -20,13 +20,13 @@
       </a>
       <ul class="nav nav-treeview">
         <li class="nav-item">
-          <a href="/kategori" class="nav-link">
+          <a href="/admin/kategori" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Kategori Produk</p>
           </a>
         </li>
         <li class="nav-item">
-          <a href="/produk" class="nav-link">
+          <a href="/admin/produk" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Add Produk</p>
           </a>

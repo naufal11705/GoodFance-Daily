@@ -47,7 +47,7 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('laporan', [\App\Http\Controllers\LaporanController::class,'index']);
     Route::get('proseslaporan', [\App\Http\Controllers\LaporanController::class,'proses']);
 
-    Route::resource('kategori', \App\Http\Controllers\KategoriController::class);
+    Route::resource('/kategori', \App\Http\Controllers\KategoriController::class);
     Route::resource('produk', \App\Http\Controllers\ProdukController::class);
     Route::resource('customer', \App\Http\Controllers\CustomerController::class);
     Route::resource('transaksi', \App\Http\Controllers\TransaksiController::class);
