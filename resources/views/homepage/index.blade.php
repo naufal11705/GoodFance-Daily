@@ -56,62 +56,7 @@
   <div style="margin-left: 50px; margin-right: 50px; margin-top: 30px;">
     <h4 style="margin-left: 15px;" class="fw-bolder">Promo</h4>
     <div class="row row-cols-1 row-cols-lg-5 g-2 g-lg-3 ms-2 ms-lg-2 ms-md-2 ms-xl-2">
-      <div class="col">
-        <div class="card" style="height: 405px;">
-          <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
-            <img src="img/photo2.png" class="card-img-top" style="max-height: 190px; width: 100%;" alt="...">
-          </div>
-          <div class="card-body">
-            <div>
-              <p class="card-text">Nama Produk</p>
-            </div>
-            <div>
-              <p class="card-text fw-bold">Harga Diskon</p>
-            </div>
-            <div>
-              <button type="button" class="btn btn-danger"
-                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" disabled>
-                100%
-              </button>
-              <span class="text-muted text-decoration-line-through">Harga discount</span>
-            </div>
-            <div>
-              <i class="fa-solid fa-star text-warning"></i>
-              <span>5.0</span>
-            </div>
-          </div>
-          <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
-          <a type="button" class="btn btn-dark btn-sm mb-2 mx-3">Buy now</a>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="height: 405px;">
-          <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
-            <img src="images/slide2.jpg" class="card-img-top" style="max-height: 190px; width: 100%;" alt="...">
-          </div>
-          <div class="card-body">
-            <div>
-              <p class="card-text">Nama Produk</p>
-            </div>
-            <div>
-              <p class="card-text fw-bold">Harga Diskon</p>
-            </div>
-            <div>
-              <button type="button" class="btn btn-danger"
-                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" disabled>
-                100%
-              </button>
-              <span class="text-muted text-decoration-line-through">Harga discount</span>
-            </div>
-            <div>
-              <i class="fa-solid fa-star text-warning"></i>
-              <span>5.0</span>
-            </div>
-          </div>
-          <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
-          <a type="button" class="btn btn-dark btn-sm mb-2 mx-3">Buy now</a>
-        </div>
-      </div>
+      @foreach($itemproduk as $produk)
       <div class="col">
         <div class="card" style="height: 405px;">
           <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
@@ -119,7 +64,7 @@
           </div>
           <div class="card-body">
             <div>
-              <p class="card-text">Nama Produk</p>
+              <p class="card-text">{{ $produk->nama_produk }}</p>
             </div>
             <div>
               <p class="card-text fw-bold">Harga Diskon</p>
@@ -127,7 +72,6 @@
             <div>
               <button type="button" class="btn btn-danger"
                 style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" disabled>
-                100%
               </button>
               <span class="text-muted text-decoration-line-through">Harga discount</span>
             </div>
@@ -140,62 +84,7 @@
           <a type="button" class="btn btn-dark btn-sm mb-2 mx-3">Buy now</a>
         </div>
       </div>
-      <div class="col">
-        <div class="card" style="height: 405px;">
-          <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
-            <img src="images/slide3.jpg" class="card-img-top" style="max-height: 190px; width: 100%;" alt="...">
-          </div>
-          <div class="card-body">
-            <div>
-              <p class="card-text">Nama Produk</p>
-            </div>
-            <div>
-              <p class="card-text fw-bold">Harga Diskon</p>
-            </div>
-            <div>
-              <button type="button" class="btn btn-danger"
-                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" disabled>
-                100%
-              </button>
-              <span class="text-muted text-decoration-line-through">Harga discount</span>
-            </div>
-            <div>
-              <i class="fa-solid fa-star text-warning"></i>
-              <span>5.0</span>
-            </div>
-          </div>
-          <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
-          <a type="button" class="btn btn-dark btn-sm mb-2 mx-3">Buy now</a>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="height: 405px;">
-          <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
-            <img src="images/slide3.jpg" class="card-img-top" style="max-height: 190px; width: 100%;" alt="...">
-          </div>
-          <div class="card-body">
-            <div>
-              <p class="card-text">Nama Produk</p>
-            </div>
-            <div>
-              <p class="card-text fw-bold">Harga Diskon</p>
-            </div>
-            <div>
-              <button type="button" class="btn btn-danger"
-                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" disabled>
-                100%
-              </button>
-              <span class="text-muted text-decoration-line-through">Harga discount</span>
-            </div>
-            <div>
-              <i class="fa-solid fa-star text-warning"></i>
-              <span>5.0</span>
-            </div>
-          </div>
-          <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
-          <a type="button" class="btn btn-dark btn-sm mb-2 mx-3">Buy now</a>
-        </div>
-      </div>
+      @endforeach
     </div>
   </div>
   <!-- end produk promo -->
