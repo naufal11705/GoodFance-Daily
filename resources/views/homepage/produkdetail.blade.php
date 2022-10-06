@@ -222,7 +222,9 @@
                             @endif
                             </button>
                           </form>	
-                        <button class="btn btn-outline-light">Buy Now</button>	
+                        <a href="{{ URL::to('checkout') }}" class="btn btn-outline-light">
+                            Checkout
+                        </a>
                         <form action="{{ route('cartdetail.store') }}" method="POST">
                             @csrf
                             <input type="hidden" name="produk_id" value={{$itemproduk->id}}>

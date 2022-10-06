@@ -18,9 +18,13 @@ class CartController extends Controller
         $itemcart = Cart::where('user_id', $itemuser->id)
                         ->where('status_cart', 'cart')
                         ->first();
-        $data = array('title' => 'Shopping Cart',
-                    'itemcart' => $itemcart);
-        return view('cart.index', $data)->with('no', 1);
+        if ($itemcart) {
+            $data = array('title' => 'Shopping Cart',
+                        'itemcart' => $itemcart);
+            return view('cart.index', $data)->with('no', 1);            
+        } else {
+            return abort('404');
+        }
     }
 
     /**
@@ -94,5 +98,23 @@ class CartController extends Controller
         $itemcart->detail()->delete();//hapus semua item di cart detail
         $itemcart->updatetotal($itemcart, '-'.$itemcart->subtotal);
         return back()->with('success', 'Cart berhasil dikosongkan');
+    }
+
+    public function checkout(Request $request) {
+        $itemuser = $request->user();
+        $itemcart = Cart::where('user_id', $itemuser->id)
+                        ->where('status_cart', 'cart')
+                        ->first();
+        $itemalamatpengiriman = AlamatPengiriman::where('user_id', $itemuser->id)
+                                                ->where('status', 'utama')
+                                                ->first();
+        if ($itemcart) {
+            $data = array('title' => 'Checkout',
+                        'itemcart' => $itemcart,
+                        'itemalamatpengiriman' => $itemalamatpengiriman);
+            return view('cart.checkout', $data)->with('no', 1);
+        } else {
+            return abort('404');
+        }
     }
 }

@@ -54,6 +54,8 @@ Route::group(['prefix' => 'admin'], function() {
     Route::resource('produk', \App\Http\Controllers\ProdukController::class);
     Route::resource('customer', \App\Http\Controllers\CustomerController::class);
     Route::resource('transaksi', \App\Http\Controllers\TransaksiController::class);
+    Route::resource('alamatpengiriman', \App\Http\Controllers\AlamatPengirimanController::class);
+    Route::get('checkout', [\App\Http\Controllers\CartController::class,'checkout']);
 
     Route::get('image', [\App\Http\Controllers\ImageController::class,'index']);
     Route::post('image', [\App\Http\Controllers\ImageController::class,'store']);
