@@ -13,9 +13,9 @@ class Wishlist extends Model
     ];
 
     public function produk () {
-        return $this->belongsTo('App\Produk', 'produk_id');
+        return $this->belongsTo('App\Models\Produk', 'produk_id');
     }
     public function user () {
-        return $this->belongsTo('App\User', 'user_id');
+        return $this->belongsTo('App\Models\User', 'user_id');
     }
 }

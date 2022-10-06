@@ -210,9 +210,26 @@
                             </select>
                         </div>
                     </div>
-                    <div class="buttons d-flex flex-row mt-5 gap-3">	
+                    <div class="buttons d-flex flex-row mt-5 gap-3">
+                        <form action="{{ route('wishlist.store') }}" method="post">
+                            @csrf
+                            <input type="hidden" name="produk_id" value={{ $itemproduk->id }}>
+                            <button type="submit" class="btn btn-sm btn-outline-secondary">
+                            @if(isset($itemwishlist) && $itemwishlist)
+                            <i class="fas fa-heart"></i> Tambah ke wishlist
+                            @else
+                            <i class="far fa-heart"></i> Tambah ke wishlist
+                            @endif
+                            </button>
+                          </form>	
                         <button class="btn btn-outline-light">Buy Now</button>	
-                        <button class="btn btn-light">Add to Cart</button>	
+                        <form action="{{ route('cartdetail.store') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="produk_id" value={{$itemproduk->id}}>
+                            <button class="btn btn-block btn-primary" type="submit">
+                            <i class="fa fa-shopping-cart"></i> Tambahkan Ke Keranjang
+                            </button>
+                        </form>
                     </div>
                 </div>	
             </div>	
