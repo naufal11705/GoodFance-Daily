@@ -14,7 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('produk_images', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->integer('produk_id')->unsigned();
+            $table->string('foto')->nullable();
+            $table->foreign('produk_id')->references('id')->on('produk');
             $table->timestamps();
         });
     }

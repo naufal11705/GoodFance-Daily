@@ -37,7 +37,7 @@ Route::get('/category/{slug}', [\App\Http\Controllers\HomepageController::class,
 Route::get('/produk', [\App\Http\Controllers\HomepageController::class,'produk']);
 Route::get('/produk/{id}', [\App\Http\Controllers\HomepageController::class,'produkdetail']);
 
-Route::group(['prefix' => 'admin'], function() {
+Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
     Route::get('/', [\App\Http\Controllers\DashboardController::class,'index']);
 
     Route::get('profil', [\App\Http\Controllers\UserController::class,'index']);
@@ -61,10 +61,15 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('image', [\App\Http\Controllers\ImageController::class,'store']);
     Route::delete('image/{id}', [\App\Http\Controllers\ImageController::class,'destroy']);
     Route::post('imagekategori',[\App\Http\Controllers\KategoriController::class,'uploadimage']);
+    Route::delete('image/{id}', [\App\Http\Controllers\ImageController::class,'destroy']);
+    Route::post('imagekategori',[\App\Http\Controllers\KategoriController::class,'uploadimage']);
     Route::delete('imagekategori/{id}', [\App\Http\Controllers\KategoriController::class,'deleteimage']);
+    Route::post('produkimage',[\App\Http\Controllers\ProdukController::class,'uploadimage']);
+    Route::delete('produkimage/{id}', [\App\Http\Controllers\ProdukController::class,'deleteimage']);
+    Route::resource('slideshow',\App\Http\Controllers\SlideshowController::class);
+
     Route::resource('promo',\App\Http\Controllers\ProdukPromoController::class);
     Route::get('loadprodukasync/{id}', [\App\Http\Controllers\ProdukController::class,'loadasync']);
-    Route::resource('slideshow',\App\Http\Controllers\SlideshowController::class);
     Route::resource('wishlist', App\Http\Controllers\WishlistController::class);
 });
 

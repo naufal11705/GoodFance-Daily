@@ -59,15 +59,28 @@
                   {{ ++$no }}
                   </td>
                   <td>
-                    <img src="{{ asset('images/slide1.jpg') }}" alt="produk 1" width='150px'>
-                    <div class="row mt-2">
-                      <div class="col">
-                        <input type="file" name="gambar" id="gambar">
-                      </div>
-                      <div class="col-auto">
-                        <button class="btn btn-sm btn-primary">Upload</button>
-                      </div>
-                    </div>
+                   @if($produk->foto != null)
+                   <img src="{{ \Storage::url($produk->foto) }}" alt="{{ $produk->nama_kategori }}" width='150px' class="img-thumbnail mb-2">
+                   <br>
+                   <form action="{{ url('/admin/produkimage/'.$produk->id) }}" method="post" style="display:inline;">
+                     @csrf
+                     {{ method_field('delete') }}
+                     <button type="submit" class="btn btn-sm btn-danger mb-2">
+                       Hapus
+                     </button>                    
+                   </form>
+                   @else
+                   <form action="{{ url('/admin/produkimage') }}" method="post" enctype="multipart/form-data" class="form-inline">
+                     @csrf
+                     <div class="form-group">
+                       <input type="file" name="image" id="image">
+                       <input type="hidden" name="produk_id" value={{ $produk->id }}>
+                     </div>
+                     <div class="form-group">
+                       <button class="btn btn-primary">Upload</button>
+                     </div>
+                   </form>
+                    @endif
                   </td>
                   <td>
                   {{ $produk->kode_produk }}

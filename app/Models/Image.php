@@ -13,6 +13,6 @@ class Image extends Model
     ];
 
     public function user() {//user yang menginput data image
-        return $this->belongsTo('App\models\User', 'user_id');
+        return $this->belongsTo('App\Models\User', 'user_id');
     }
 }

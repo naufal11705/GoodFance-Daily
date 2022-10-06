@@ -25,9 +25,6 @@ class ImageController extends Controller
         $fileupload = $request->file('image');
         $folder = 'assets/images';
         $itemgambar = $this->upload($fileupload, $itemuser, $folder);
-        // $inputan = $request->all();
-        // $inputan['user_id'] = $itemuser->id;
-        // Image::create($inputan);
         return back()->with('success', 'Image berhasil diupload');
     }
 
@@ -37,7 +34,7 @@ class ImageController extends Controller
                             ->where('id', $id)
                             ->first();
         if ($itemgambar) {
-            Storage::delete($itemgambar->url);
+            \Storage::delete($itemgambar->url);
             $itemgambar->delete();
             return back()->with('success', 'Data berhasil dihapus');
         } else {
