@@ -31,6 +31,12 @@
             <p>Add Produk</p>
           </a>
         </li>
+        <li class="nav-item">
+          <a href="/admin/promo" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Promo Produk</p>
+          </a>
+        </li>
       </ul>
     </li>
     <li class="nav-item has-treeview">
@@ -57,7 +63,7 @@
       </ul>
     </li>
     <li class="nav-item has-treeview">
-      <a href="#" class="nav-link">
+      <a href="" class="nav-link">
         <i class="nav-icon fas fa-list"></i>
         <p>
           Laporan
@@ -66,7 +72,7 @@
       </a>
       <ul class="nav nav-treeview">
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="/admin/laporan" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Penjualan</p>
           </a>

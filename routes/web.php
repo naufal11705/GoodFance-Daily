@@ -61,7 +61,6 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('loadprodukasync/{id}', [\App\Http\Controllers\ProdukPromoController::class,'loadasync']);
     Route::resource('slideshow',\App\Http\Controllers\SlideshowController::class);
     Route::resource('wishlist', App\Http\Controllers\WishlistController::class);
-
 });
 
 
@@ -70,4 +69,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::view('/detail_produk', 'detail_produk');
 Route::view('/checkout', 'checkout');
 Route::view('/cart_detail', 'cart_detail');
+Route::view('/account', 'account_set');
 

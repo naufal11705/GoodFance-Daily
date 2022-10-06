@@ -148,7 +148,7 @@
         <div class="row g-0">	
             <div class="col-md-6 border-end">	
                 <div class="d-flex flex-column justify-content-center">	
-                    <div class="main_image bg-secondary">	
+                    <div class="main_image">	
                         <img src="img/photo2.png" id="main_product_image" class="img-fluid" width="590">	
                         <div id="zoom"></div>
                     </div>	
