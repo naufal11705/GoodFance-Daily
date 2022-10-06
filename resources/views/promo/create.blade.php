@@ -94,7 +94,7 @@
   $('#produk_id').on('change', function() {
     var id = $('#produk_id').val();
     $.ajax({
-      url: '{{ URL::to("admin/loadprodukasync") }}/'+id,
+      url: '{{ URL::to('admin/loadprodukasync') }}/'+id,
       type: 'get',
       dataType: 'json',
       success: function (data,status) {

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Produk;
 use App\Models\ProdukPromo;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ProdukPromoController extends Controller
 {

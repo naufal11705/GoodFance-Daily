@@ -4,15 +4,25 @@
   <!-- carousel -->
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="carousel_img/Frame1.png" class="tales" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="carousel_img/Frame2.png" class="tales" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="carousel_img/Frame3.png" class="tales" alt="...">
-      </div>
+      @foreach($itemslide as $index => $slide )
+          @if($index == 0)
+          <div class="carousel-item active">
+              <img src="{{ \Storage::url($slide->foto) }}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>{{ $slide->caption_title }}</h5>
+                <p>{{ $slide->caption_content }}</p>
+              </div>
+          </div>
+          @else
+          <div class="carousel-item">
+              <img src="{{ \Storage::url($slide->foto) }}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>{{ $slide->caption_title }}</h5>
+                <p>{{ $slide->caption_content }}</p>
+              </div>
+          </div>
+          @endif
+          @endforeach    
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -29,26 +39,12 @@
 <div class="bg-transparent" style="margin-left: 50px; margin-right: 50px; margin-top: 30px;">
   <h4 style="margin-left: 15px;" class="fw-bolder">Categories</h4>
   <div class="btn-group d-flex flex-wrap shadow-none mt-1 mt-lg-1 mt-md-1 mt-xl-1 ms-2 ms-lg-2 ms-md-2 ms-xl-2">
+    @foreach($itemkategori as $kategori)
     <a style="width: 150px; font-size: 13px;" href="#" class="btn btn-outline-secondary rounded-3 align-self-center mt-1 mt-lg-1 mt-md-1 mt-xl-1 mx-2 mx-lg-2 mx-md-2 mx-xl-2 rounded">
       <i class="fa-solid fa-person" style="margin-right: 10px;"></i>
-      Pria</span>
+      {{ $kategori->nama_kategori }}</span>
     </a>
-    <a style="width: 150px; font-size: 13px;" href="#" class="btn btn-outline-secondary rounded-3 align-self-center mt-1 mt-lg-1 mt-md-1 mt-xl-1 mx-2 mx-lg-2 mx-md-2 mx-xl-2 rounded">
-      <i class="fa-solid fa-person-dress" style="margin-right: 10px;"></i>
-      Wanita</span>
-    </a>
-    <a style="width: 150px; font-size: 13px;" href="#" class="btn btn-outline-secondary rounded-3 align-self-center mt-1 mt-lg-1 mt-md-1 mt-xl-1 mx-2 mx-lg-2 mx-md-2 mx-xl-2 rounded">
-      <i class="fa-solid fa-volleyball" style="margin-right: 10px;"></i>
-      Olahraga</span>
-    </a>
-    <a style="width: 150px; font-size: 13px;" href="#" class="btn btn-outline-secondary rounded-3 align-self-center mt-1 mt-lg-1 mt-md-1 mt-xl-1 mx-2 mx-lg-2 mx-md-2 mx-xl-2 rounded">
-      <i class="fa-solid fa-child" style="margin-right: 10px;"></i>
-      Anak</span>
-    </a>
-    <a style="width: 150px; font-size: 13px;" href="#" class="btn btn-outline-secondary rounded-3 align-self-center mt-1 mt-lg-1 mt-md-1 mt-xl-1 mx-2 mx-lg-2 mx-md-2 mx-xl-2 rounded">
-      <i class="fa-solid fa-shirt" style="margin-right: 10px;"></i>
-      Rumahan</span>
-    </a>
+    @endforeach
   </div>
 </div>
 <!-- end kategori produk -->
@@ -81,7 +77,7 @@
             </div>
           </div>
           <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
-          <a type="button" class="btn btn-dark btn-sm mb-2 mx-3">Buy now</a>
+          <a href="{{ URL::to('produk/'.$produk->slug_produk ) }}" type="button" class="btn btn-dark btn-sm mb-2 mx-3">Details</a>
         </div>
       </div>
       @endforeach
@@ -92,48 +88,7 @@
   <div style="margin-left: 50px; margin-right: 50px; margin-top: 30px;">
     <h4 style="margin-left: 15px;" class="fw-bolder">Terbaru</h4>
     <div class="row row-cols-1 row-cols-lg-5 g-2 g-lg-3 ms-2 ms-lg-2 ms-md-2 ms-xl-2">
-      <div class="col">
-        <div class="card" style="height: 405px;">
-          <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
-            <img src="img/photo2.png" class="card-img-top" style="max-height: 190px; width: 100%;" alt="...">
-          </div>
-          <div class="card-body">
-            <div>
-              <p class="card-text">Nama Produk</p>
-            </div>
-            <div>
-              <p class="card-text fw-bold">Harga Diskon</p>
-            </div>
-            <div>
-              <i class="fa-solid fa-star text-warning"></i>
-              <span>5.0</span>
-            </div>
-          </div>
-          <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
-          <a type="button" class="btn btn-dark btn-sm mb-2 mx-3">Buy now</a>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="height: 405px;">
-          <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
-            <img src="images/slide2.jpg" class="card-img-top" style="max-height: 190px; width: 100%;" alt="...">
-          </div>
-          <div class="card-body">
-            <div>
-              <p class="card-text">Nama Produk</p>
-            </div>
-            <div>
-              <p class="card-text fw-bold">Harga Diskon</p>
-            </div>
-            <div>
-              <i class="fa-solid fa-star text-warning"></i>
-              <span>5.0</span>
-            </div>
-          </div>
-          <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
-          <a type="button" class="btn btn-dark btn-sm mb-2 mx-3">Buy now</a>
-        </div>
-      </div>
+      @foreach($itemproduk as $produk)
       <div class="col">
         <div class="card" style="height: 405px;">
           <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
@@ -141,10 +96,16 @@
           </div>
           <div class="card-body">
             <div>
-              <p class="card-text">Nama Produk</p>
+              <p class="card-text">{{ $produk->nama_produk }}</p>
             </div>
             <div>
               <p class="card-text fw-bold">Harga Diskon</p>
+            </div>
+            <div>
+              <button type="button" class="btn btn-danger"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" disabled>
+              </button>
+              <span class="text-muted text-decoration-line-through">Harga discount</span>
             </div>
             <div>
               <i class="fa-solid fa-star text-warning"></i>
@@ -152,51 +113,10 @@
             </div>
           </div>
           <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
-          <a type="button" class="btn btn-dark btn-sm mb-2 mx-3">Buy now</a>
+          <a href="{{ URL::to('produk/'.$produk->slug_produk ) }}" type="button" class="btn btn-dark btn-sm mb-2 mx-3">Details</a>
         </div>
       </div>
-      <div class="col">
-        <div class="card" style="height: 405px;">
-          <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
-            <img src="images/slide3.jpg" class="card-img-top" style="max-height: 190px; width: 100%;" alt="...">
-          </div>
-          <div class="card-body">
-            <div>
-              <p class="card-text">Nama Produk</p>
-            </div>
-            <div>
-              <p class="card-text fw-bold">Harga Diskon</p>
-            </div>
-            <div>
-              <i class="fa-solid fa-star text-warning"></i>
-              <span>5.0</span>
-            </div>
-          </div>
-          <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
-          <a type="button" class="btn btn-dark btn-sm mb-2 mx-3">Buy now</a>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="height: 405px;">
-          <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
-            <img src="images/slide3.jpg" class="card-img-top" style="max-height: 190px; width: 100%;" alt="...">
-          </div>
-          <div class="card-body">
-            <div>
-              <p class="card-text">Nama Produk</p>
-            </div>
-            <div>
-              <p class="card-text fw-bold">Harga Diskon</p>
-            </div>
-            <div>
-              <i class="fa-solid fa-star text-warning"></i>
-              <span>5.0</span>
-            </div>
-          </div>
-          <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
-          <a type="button" class="btn btn-dark btn-sm mb-2 mx-3">Buy now</a>
-        </div>
-      </div>
+      @endforeach
     </div>
   </div>
   <!-- end produk terbaru -->

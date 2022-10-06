@@ -33,6 +33,9 @@ Route::get('/', [\App\Http\Controllers\HomePageController::class,'index']);
 Route::get('/about', [\App\Http\Controllers\HomePageController::class,'about']);
 Route::get('/kontak', [\App\Http\Controllers\HomePageController::class,'kontak']);
 Route::get('/category', [\App\Http\Controllers\HomePageController::class,'kategori']);
+Route::get('/category/{slug}', [\App\Http\Controllers\HomepageController::class,'kategoribyslug']);
+Route::get('/produk', [\App\Http\Controllers\HomepageController::class,'produk']);
+Route::get('/produk/{id}', [\App\Http\Controllers\HomepageController::class,'produkdetail']);
 
 Route::group(['prefix' => 'admin'], function() {
     Route::get('/', [\App\Http\Controllers\DashboardController::class,'index']);
@@ -58,7 +61,7 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('imagekategori',[\App\Http\Controllers\KategoriController::class,'uploadimage']);
     Route::delete('imagekategori/{id}', [\App\Http\Controllers\KategoriController::class,'deleteimage']);
     Route::resource('promo',\App\Http\Controllers\ProdukPromoController::class);
-    Route::get('loadprodukasync/{id}', [\App\Http\Controllers\ProdukPromoController::class,'loadasync']);
+    Route::get('loadprodukasync/{id}', [\App\Http\Controllers\ProdukController::class,'loadasync']);
     Route::resource('slideshow',\App\Http\Controllers\SlideshowController::class);
     Route::resource('wishlist', App\Http\Controllers\WishlistController::class);
 });
@@ -66,7 +69,6 @@ Route::group(['prefix' => 'admin'], function() {
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::view('/detail_produk', 'detail_produk');
 Route::view('/checkout', 'checkout');
 Route::view('/cart_detail', 'cart_detail');
 Route::view('/account', 'account_set');

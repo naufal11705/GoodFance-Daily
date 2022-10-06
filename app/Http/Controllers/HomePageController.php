@@ -3,17 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk; 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Models\Kategori;
+use App\Models\Wishlist;
 use App\Models\Slideshow;
 use App\Models\ProdukPromo;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class HomepageController extends Controller
 {
     public function index() {
-        $itemproduk = Produk::orderBy('created_at', 'desc')->limit(6)->get();
-        $itempromo = ProdukPromo::orderBy('created_at', 'desc')->limit(6)->get();
+        $itemproduk = Produk::orderBy('created_at', 'desc')->limit(5)->get();
+        $itempromo = ProdukPromo::orderBy('created_at', 'desc')->limit(5)->get();
         $itemkategori = Kategori::orderBy('nama_kategori', 'asc')->limit(6)->get();
         $itemslide = Slideshow::get();
         $data = array('title' => 'Homepage',
@@ -39,6 +41,7 @@ class HomepageController extends Controller
         $data = array('title' => 'Kategori Produk');
         return view('homepage.kategori', $data);
     }
+
     public function produkdetail($id) {
         $itemproduk = Produk::where('slug_produk', $id)
                             ->where('status', 'publish')
@@ -62,4 +65,5 @@ class HomepageController extends Controller
             return abort('404');
         }
     }
+
 }
