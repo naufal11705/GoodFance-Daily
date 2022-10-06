@@ -134,6 +134,7 @@ class KategoriController extends Controller
             }
         }
     }
+
     public function uploadimage(Request $request) {
         $this->validate($request, [
             'image' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',

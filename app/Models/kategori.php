@@ -20,6 +20,6 @@ class kategori extends Model
     ];
 
     public function user() {//user yang menginput data kategori
-        return $this->belongsTo('App\User', 'user_id');
+        return $this->belongsTo('App\Models\User', 'user_id');
     }
 }

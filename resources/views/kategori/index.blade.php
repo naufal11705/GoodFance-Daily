@@ -28,6 +28,11 @@
           </form>
         </div>
         <div class="card-body">
+          @if(count($errors) > 0)
+          @foreach($errors->all() as $error)
+              <div class="alert alert-warning">{{ $error }}</div>
+          @endforeach
+          @endif
           @if ($message = Session::get('error'))
               <div class="alert alert-warning">
                   <p>{{ $message }}</p>
