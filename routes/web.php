@@ -79,4 +79,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::view('/checkout', 'checkout');
 Route::view('/cart_detail', 'cart_detail');
 Route::view('/account', 'account_set');
+Route::view('/search', 'filter_search');
 
