@@ -163,7 +163,7 @@ class KategoriController extends Controller
                                 ->first();
         if ($itemkategori) {
             // kita cari dulu database berdasarkan url gambar
-            $itemgambar = \App\Image::where('url', $itemkategori->foto)->first();
+            $itemgambar = \App\Models\Image::where('url', $itemkategori->foto)->first();
             // hapus imagenya
             if ($itemgambar) {
                 \Storage::delete($itemgambar->url);
