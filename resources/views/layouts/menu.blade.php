@@ -2,13 +2,15 @@
 <nav class="navbar navbar-expand-lg navbar-white bg-white text-white shadow-none py-2">
   <!-- Container wrapper -->
   <div class="container-fluid" style="margin-left: 55px; margin-right: 50px;">
+    <div class="d-flex align-items-center justify-content-start">
       <!-- Navbar brand -->
       <a class="navbar-brand mt-lg-0 fw-bold" href="/">
         GoodFance
       </a>
+    </div>
 
       <!-- Search -->
-      <form action="/search" method="POST" style="display: inline-block;">
+      <form action="/search" method="POST" class="mx-3" style="display: inline-block; width:100%;">
         @csrf
         <div class="input-group ms-2">
           <input name="search" style="height: 40px; border-radius: 30px 0 0 30px;" type="text" class="form-control" placeholder="Search">
@@ -22,7 +24,7 @@
       <!-- Search -->
 
     <!-- Right elements -->
-    <div class="d-flex align-items-center">
+    <div class="d-flex align-items-center justify-content-end">
 
       @guest
       <div class="btn-group shadow-none mt-2 mt-lg-0 mt-md-0 mt-xl-0">
@@ -54,16 +56,14 @@
         </ul>
       </div>
       @endauth
-
-      
+      <!-- Cart -->
+      <button type="button" class="btn btn-transparent align-self-center shadow-none mt-2 mt-lg-0 mt-md-0 mt-xl-0">
+        <a class="text-dark fs-5" href="/cart_detail">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+      </button>
     <!-- Right elements -->
   </div>
-  <!-- Cart -->
-  <button type="button" class="btn btn-transparent align-self-center shadow-none mt-2 mt-lg-0 mt-md-0 mt-xl-0">
-    <a class="text-dark fs-5" href="/cart_detail">
-      <i class="fas fa-shopping-cart"></i>
-    </a>
-  </button>
   <!-- Container wrapper -->
 </nav>
 <!-- Navbar -->

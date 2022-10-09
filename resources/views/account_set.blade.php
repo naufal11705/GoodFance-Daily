@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div class="mt-2 fs-6">
-                <p>0813746721647</p>
+                <p>{{ Auth::user()->phone }}</p>
             </div>
         </div>
     </div>
