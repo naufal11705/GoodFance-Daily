@@ -39,7 +39,7 @@ class HomepageController extends Controller
 
     public function kategori() {
         $data = array('title' => 'Kategori Produk');
-        return view('homepage.kategori', $data);
+        return view('homepage.kontak', $data);
     }
 
     public function kategoribyslug(Request $request, $slug) {
@@ -76,7 +76,7 @@ class HomepageController extends Controller
         $data = array('title' => 'Produk',
                     'itemproduk' => $itemproduk,
                     'listkategori' => $listkategori);
-        return view('homepage.produk', $data)->with('no', ($request->input('page') - 1) * 18);
+        return view('homepage.produk', $data);
     }
 
     public function produkdetail($id) {
@@ -101,6 +101,20 @@ class HomepageController extends Controller
             // kalo produk ga ada, jadinya tampil halaman tidak ditemukan (error 404)
             return abort('404');
         }
+    }
+
+    public function searching(Request $request)
+    {
+        $search = $request['search'];
+        if ($search != "") {
+            $produk = Produk::where('nama_produk','LIKE', '%'.$search.'%')
+                            ->orWhereRelation('kategori','nama_kategori','LIKE', '%'.$search.'%')
+                            ->get();
+        } else {
+            $produk = Produk::all();
+        }
+        $data = array('produk' => $produk,'search'=> $search);
+        return view('homepage.search', $data);
     }
 
 }
