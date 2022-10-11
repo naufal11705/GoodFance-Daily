@@ -149,13 +149,13 @@
             <div class="col-md-6 border-end">	
                 <div class="d-flex flex-column justify-content-center">	
                     <div class="main_image bg-secondary">	
-                        <img src="img/photo2.png" id="main_product_image" class="img-fluid" width="590">	
+                        <img src="{{ Storage::url($itemproduk->foto) }}" id="main_product_image" class="img-fluid" width="590">	
                         <div id="zoom"></div>
                     </div>	
                     <div class="thumbnail_images">	
                         <ul id="thumbnail">	
                             <li>
-                                <img onclick="changeImage(this)" src="{{ Storage::url($itemproduk->image) }}" width="70">
+                                <img onclick="changeImage(this)" src="{{ Storage::url($itemproduk->foto) }}" width="70">
                             </li>	
                         </ul>	
                     </div>	

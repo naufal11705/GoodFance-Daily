@@ -34,4 +34,8 @@ class produk extends Model
     public function images() {
         return $this->hasMany('App\Models\ProdukImage', 'produk_id');
     }
+
+    public function promo() {
+        return $this->belongsTo('App\Models\ProdukPromo', 'produk_id');
+    }
 }

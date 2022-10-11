@@ -37,6 +37,7 @@ Route::get('/category/{slug}', [\App\Http\Controllers\HomepageController::class,
 Route::get('/produk', [\App\Http\Controllers\HomepageController::class,'produk']);
 Route::get('/produk/{id}', [\App\Http\Controllers\HomepageController::class,'produkdetail']);
 Route::post('/search',[\App\Http\Controllers\HomepageController::class,'searching']);
+Route::get('/all', [\App\Http\Controllers\HomepageController::class,'allProduk']);
 
 Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
     Route::get('/', [\App\Http\Controllers\DashboardController::class,'index']);

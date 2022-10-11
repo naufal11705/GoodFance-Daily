@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 
 class HomepageController extends Controller
 {
-    public function index() {
+    public function index(Request $request) {
         $itemproduk = Produk::orderBy('created_at', 'desc')->limit(5)->get();
         $itempromo = ProdukPromo::orderBy('created_at', 'desc')->limit(5)->get();
         $itemkategori = Kategori::orderBy('nama_kategori', 'asc')->limit(6)->get();
@@ -22,7 +22,7 @@ class HomepageController extends Controller
             'itemproduk' => $itemproduk,
             'itempromo' => $itempromo,
             'itemkategori' => $itemkategori,
-            'itemslide' => $itemslide,
+            'itemslide' => $itemslide
         );
         return view('homepage.index', $data);
     }
@@ -38,8 +38,16 @@ class HomepageController extends Controller
     }
 
     public function kategori() {
-        $data = array('title' => 'Kategori Produk');
-        return view('homepage.kontak', $data);
+        $itemproduk = Produk::orderBy('created_at', 'desc')->get();
+        $itempromo = ProdukPromo::orderBy('created_at', 'desc')->get();
+        $itemkategori = Kategori::orderBy('nama_kategori', 'asc')->get();
+        $itemslide = Slideshow::get();
+        $data = array('title' => 'Homepage',
+            'itemproduk' => $itemproduk,
+            'itempromo' => $itempromo,
+            'itemkategori' => $itemkategori,
+        );
+        return view('homepage.kategori', $data);
     }
 
     public function kategoribyslug(Request $request, $slug) {
@@ -115,6 +123,14 @@ class HomepageController extends Controller
         }
         $data = array('produk' => $produk,'search'=> $search);
         return view('homepage.search', $data);
+    }
+
+    public function allProduk(Request $request)
+    {
+        $itemproduk = Produk::orderBy('created_at', 'desc')->get();
+        $itempromo = ProdukPromo::orderBy('created_at', 'desc')->get();
+        $data = array( 'itemproduk' => $itemproduk, 'itempromo' => $itempromo,);
+        return view('homepage.semua_produk', $data);
     }
 
 }
