@@ -78,6 +78,120 @@
         .dropdown.hover:hover li:first-child, .dropdown.toggle > input:checked ~ ul li:first-child{
             margin-top: 15px;
         }
+
+.border-top {
+    border-top: 1px solid #EEEEEE !important;
+    margin-top: 20px;
+    padding-top: 15px;
+}
+
+.card {
+    margin: 40px 0px;
+    padding: 40px 50px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 1px 5px 10px 1px rgba(0,0,0,0.2);
+}
+
+input, textarea {
+    background-color: #F3E5F5;
+    padding: 8px 15px 8px 15px;
+    width: 100%;
+    border-radius: 5px !important;
+    box-sizing: border-box;
+    border: 1px solid #F3E5F5;
+    font-size: 15px !important;
+    color: #000 !important;
+    font-weight: 300;
+}
+
+input:focus, textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #9FA8DA;
+    outline-width: 0;
+    font-weight: 400;
+}
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0;
+}
+
+.pay {
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #673AB7;
+    margin: 10px 20px 10px 0px;
+    cursor: pointer;
+    box-shadow: 1px 5px 10px 1px rgba(0,0,0,0.2);
+}
+
+.gray {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%);
+    color: #E0E0E0;
+}
+
+.gray .pay {
+    box-shadow: none;
+}
+
+#tax {
+    border-top: 1px lightgray solid;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.btn-blue {
+    border: none;
+    border-radius: 10px;
+    background-color: #673AB7;
+    color: #fff;
+    padding: 8px 15px;
+    margin: 20px 0px;
+    cursor: pointer;
+}
+
+.btn-blue:hover {
+    background-color: #311B92;
+    color: #fff;
+}
+
+#checkout {
+    float: left;
+}
+
+#check-amt {
+    float: right;
+}
+
+@media screen and (max-width: 768px) {
+    .book, .book-img {
+        width: 100px;
+        height: 150px;
+    }
+
+    .card {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .mob-text {
+        font-size: 13px;
+    }
+
+    .pad-left { 
+        padding-left: 20px;
+    }
+}
     </style>
 </head>
 <body>
@@ -171,14 +285,29 @@
               </tbody>
             </table>
           </div>
-          <div class="col">
-            <form action="{{ url('kosongkan').'/'.$itemcart->id }}" method="post">
-              @method('patch')
-              @csrf()
-              <button type="submit" class="btn btn-danger btn-block">Kosongkan</button>
-            </form>
-          </div>
     </div>
+
+    <div class="bg-light rounded-bottom py-4 mt-2" id="zero-pad" style="margin-left: 55px; margin-right: 50px;">
+      <div class="row d-flex justify-content-center">
+          <div class="col-lg-10 col-12">
+              <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <form action="{{ url('kosongkan').'/'.$itemcart->id }}" method="post">
+                      @method('patch')
+                      @csrf()
+                      <button type="submit" class="btn btn-warning btn-block">Kosongkan</button>
+                    </form>
+                  </div>
+                  <div class="px-md-0 px-1 fs-6" id="footer-font">
+                      <b class="pl-md-4">SUBTOTAL: <span class="pl-md-4">Rp. {{ number_format($detail->subtotal, 2) }}</span></b>
+                  </div>
+                  <div>
+                      <a href="/checkout" class="btn btn-sm btn-info text-dark px-lg-5 px-3">CONTINUE</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
     @endauth
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
