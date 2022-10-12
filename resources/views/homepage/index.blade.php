@@ -152,7 +152,7 @@
   <div class="mt-4 px-5">
     <h5 class="text-center">GoodFance</h5>
     <p>
-      GoodFance adalah e-commerce baru dari Indonesia yang menjual produk produk tentang fashion. Website ini sangat
+      GoodFance adalah e-commerce baru dari Indonesia yang menjual produk produk tentang fashion. Website made in china
     </p>
     <p>
       Toko adalah demo membangun toko online menggunakan laravel framework. Di dalam demo ini terdapat user bisa menginput data kategori, produk dan transaksi.

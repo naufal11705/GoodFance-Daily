@@ -18,7 +18,7 @@
     <div class="col-6 col-lg-3">
       <div class="small-box bg-info">
         <div class="inner">
-          <h3>150</h3>
+          <h3>{{ $produkCount }}</h3>
 
           <p>Produk</p>
         </div>
