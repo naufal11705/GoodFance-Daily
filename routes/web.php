@@ -17,6 +17,7 @@ use App\Http\Controllers\SlideshowController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\CartDetailController;
 use App\Http\Controllers\ProdukPromoController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,6 +78,8 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile.edit');
+Route::patch('profile', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
 Route::view('/checkout', 'checkout');
 Route::view('/cart_detail', 'cart_detail');
 Route::view('/account', 'account_set');

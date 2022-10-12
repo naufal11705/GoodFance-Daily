@@ -1,31 +1,6 @@
 @extends('layouts.template')
 @section('content')
 <style>
-.form-control:focus {
-    box-shadow: none;
-    border-color: #BA68C8
-}
-
-.profile-button {
-    background: rgb(99, 39, 120);
-    box-shadow: none;
-    border: none
-}
-
-.profile-button:hover {
-    background: #682773
-}
-
-.profile-button:focus {
-    background: #682773;
-    box-shadow: none
-}
-
-.profile-button:active {
-    background: #682773;
-    box-shadow: none
-}
-
 .back:hover {
     color: #682773;
     cursor: pointer
@@ -97,7 +72,7 @@
                                 @enderror
                             </div>
                             <div class="form-group mt-5 text-center">
-                                <button class="btn btn-primary profile-button" type="submit">Save Profile</button>
+                                <button class="btn btn-info profile-button" type="submit">Save Profile</button>
                             </div>
                         </div>
                     </form>

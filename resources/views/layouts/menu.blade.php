@@ -40,7 +40,7 @@
           <i class="fa-solid fa-caret-down"></i>
         </a>
         <ul class="menu-dropdown" style="width: 190px;">
-          <li><a href="/account">Account</a></li>
+          <li><a href="{{ route('profile.edit') }}">Account</a></li>
           <li><a style="padding-top: 2.5px;" href="#">Become a seller</a></li>
           <li>
             <a style="padding-top: 2.5px; padding-bottom: 7px;" href="{{ route('logout') }}"
