@@ -5,7 +5,6 @@
     color: #682773;
     cursor: pointer
 }
-
 .labels {
     font-size: 11px
 }
