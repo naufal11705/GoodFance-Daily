@@ -1,6 +1,6 @@
 @extends('layouts.template')
 @section('content')
-<div class="container">
+<div class="container mt-3">
   <div class="row">
     <div class="col col-12 mb-2">
       <div class="card">
@@ -10,7 +10,7 @@
               Alamat Pengiriman
             </div>
             <div class="col-auto">
-              <a href="{{ URL::to('checkout') }}" class="btn btn-sm btn-danger">
+              <a href="{{ URL::to('checkout') }}" class="btn btn-sm btn-warning shadow-sm">
                 Tutup
               </a>
             </div>
@@ -119,8 +119,8 @@
                   <label for="kodepos">Kodepos</label>
                   <input type="text" name="kodepos" class="form-control" value={{old('kodepos') }}>
                 </div>
-                <div class="form-group">
-                  <button type="submit" class="btn btn-primary">Simpan</button>
+                <div class="form-group mt-2">
+                  <button type="submit" class="btn btn-info btn-sm shadow-sm">Simpan</button>
                 </div>
               </div>
             </div>

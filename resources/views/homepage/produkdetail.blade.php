@@ -163,7 +163,7 @@
             </div>	
             <div class="col-md-6 bg-dark text-white">	
                 <div class="p-3 right-side">	
-                    <div class="d-flex justify-content-between align-items-center">	
+                    <div class="align-items-center">	
                         <h3>{{ $itemproduk->nama_produk }}</h3>
                     </div>
                     <hr class="my-1">
