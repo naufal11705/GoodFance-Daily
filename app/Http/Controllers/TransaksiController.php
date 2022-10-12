@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
+use App\Models\Order;
 use Illuminate\Http\Request;
+use App\Models\AlamatPengiriman;
+use App\Http\Controllers\Controller;
 
 class TransaksiController extends Controller
 {

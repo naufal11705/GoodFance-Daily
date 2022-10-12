@@ -39,27 +39,17 @@ Route::get('/produk', [\App\Http\Controllers\HomepageController::class,'produk']
 Route::get('/produk/{id}', [\App\Http\Controllers\HomepageController::class,'produkdetail']);
 Route::post('/search',[\App\Http\Controllers\HomepageController::class,'searching']);
 Route::get('/all', [\App\Http\Controllers\HomepageController::class,'allProduk']);
-Route::patch('kosongkan/{id}', [\App\Http\Controllers\CartController::class,'kosongkan']);
+
 Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
     Route::get('/', [\App\Http\Controllers\DashboardController::class,'index']);
-
     Route::get('profil', [\App\Http\Controllers\UserController::class,'index']);
     Route::get('setting', [\App\Http\Controllers\UserController::class,'setting']);
-
-    Route::resource('cart', App\Http\Controllers\CartController::class);
-    
-    Route::resource('cartdetail', App\Http\Controllers\CartDetailController::class);
-
     Route::get('laporan', [\App\Http\Controllers\LaporanController::class,'index']);
     Route::get('proseslaporan', [\App\Http\Controllers\LaporanController::class,'proses']);
-
-    Route::resource('/kategori', \App\Http\Controllers\KategoriController::class);
+    Route::resource('kategori', \App\Http\Controllers\KategoriController::class);
     Route::resource('produk', \App\Http\Controllers\ProdukController::class);
     Route::resource('customer', \App\Http\Controllers\CustomerController::class);
     Route::resource('transaksi', \App\Http\Controllers\TransaksiController::class);
-    Route::resource('alamatpengiriman', \App\Http\Controllers\AlamatPengirimanController::class);
-    Route::get('checkout', [\App\Http\Controllers\CartController::class,'checkout']);
-
     Route::get('image', [\App\Http\Controllers\ImageController::class,'index']);
     Route::post('image', [\App\Http\Controllers\ImageController::class,'store']);
     Route::delete('image/{id}', [\App\Http\Controllers\ImageController::class,'destroy']);
@@ -69,18 +59,23 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
     Route::post('produkimage',[\App\Http\Controllers\ProdukController::class,'uploadimage']);
     Route::delete('produkimage/{id}', [\App\Http\Controllers\ProdukController::class,'deleteimage']);
     Route::resource('slideshow',\App\Http\Controllers\SlideshowController::class);
-
     Route::resource('promo',\App\Http\Controllers\ProdukPromoController::class);
     Route::get('loadprodukasync/{id}', [\App\Http\Controllers\ProdukController::class,'loadasync']);
     Route::resource('wishlist', App\Http\Controllers\WishlistController::class);
 });
 
+Route::group(['middleware'=>'auth'], function() {
+    Route::resource('cart', App\Http\Controllers\CartController::class);
+    Route::resource('cartdetail', App\Http\Controllers\CartDetailController::class);
+    Route::resource('alamatpengiriman', \App\Http\Controllers\AlamatPengirimanController::class);
+    Route::get('checkout', [\App\Http\Controllers\CartController::class,'checkout']);
+    Route::patch('kosongkan/{id}', [\App\Http\Controllers\CartController::class,'kosongkan']);
+});
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile.edit');
 Route::patch('profile', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
-Route::view('/checkout', 'checkout');
 Route::view('/cart_detail', 'cart_detail');
 Route::view('/account', 'account_set');
 Route::view('/dash', 'new_dash');

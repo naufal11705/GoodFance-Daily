@@ -114,7 +114,10 @@
         </div>
       </div>
     </div>
+    
     <div class="col col-4">
+      <form action="{{ route('transaksi.store') }}" method="post">
+        @csrf
       <div class="card">
         <div class="card-header">
           Ringkasan
@@ -148,12 +151,10 @@
           </table>
         </div>
         <div class="card-footer">
-          <form action="{{ route('transaksi.store') }}" method="post">
-            @csrf()
             <button type="submit" class="btn btn-danger btn-block">Buat Pesanan</button>
-          </form>
         </div>
       </div>
+    </form>
     </div>
   </div>
 </div>
