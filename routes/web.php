@@ -39,7 +39,7 @@ Route::get('/produk', [\App\Http\Controllers\HomepageController::class,'produk']
 Route::get('/produk/{id}', [\App\Http\Controllers\HomepageController::class,'produkdetail']);
 Route::post('/search',[\App\Http\Controllers\HomepageController::class,'searching']);
 Route::get('/all', [\App\Http\Controllers\HomepageController::class,'allProduk']);
-
+Route::patch('kosongkan/{id}', [\App\Http\Controllers\CartController::class,'kosongkan']);
 Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
     Route::get('/', [\App\Http\Controllers\DashboardController::class,'index']);
 
@@ -47,7 +47,7 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
     Route::get('setting', [\App\Http\Controllers\UserController::class,'setting']);
 
     Route::resource('cart', App\Http\Controllers\CartController::class);
-    Route::patch('kosongkan/{id}', [\App\Http\Controllers\CartController::class,'kosongkan']);
+    
     Route::resource('cartdetail', App\Http\Controllers\CartDetailController::class);
 
     Route::get('laporan', [\App\Http\Controllers\LaporanController::class,'index']);

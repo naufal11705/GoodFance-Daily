@@ -93,8 +93,9 @@
     </div>
 </nav>
 
-<div style="margin-left: 50px; margin-right: 50px; margin-top: 30px;" hidden>
-    <div class="row row-cols-1 row-cols-lg-5 g-2 g-lg-3 ms-2 ms-lg-2 ms-md-2 ms-xl-2">
+<div class="container-fluid mt-4">
+  <h4 class="fw-semibold">Promo</h4>
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
       @foreach($itempromo as $promo)
       <div class="col">
         <div class="card" style="height: 415px;">
@@ -131,7 +132,7 @@
   </div>
 
 <div class="container-fluid mt-4">
-    <h4 class="fw-semibold">Hasil</h4>
+    <h4 class="fw-semibold">Produk</h4>
     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
         @foreach($itemproduk as $produk)
         <div class="col">
@@ -143,27 +144,12 @@
               <div>
                 <p class="card-text">{{ $produk->nama_produk }}</p>
               </div>
-              @if($produk->id == $promo->produk_id)
-                <div>
-                  <p class="card-text fw-bold">Harga Diskon</p>
-                </div>
-                <div>
-                  <button type="button" class="btn btn-danger"
-                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" disabled>
-                  </button>
-                  <span class="text-muted text-decoration-line-through">Rp. {{ number_format($promo->harga_awal, 2) }}</span>
-                </div>
-                <div>
-                  <span>Rp. {{ number_format($promo->harga_akhir, 2) }}</span>
-                </div>
-            @else
                 <div>
                   <p class="card-text fw-bold">Harga</p>
                 </div>
                 <div>
                   <span>Rp. {{ number_format($produk->harga, 2) }}</span>
                 </div>
-            @endif
               <div>
                 <i class="fa-solid fa-star text-warning"></i>
                 <span>5.0</span>

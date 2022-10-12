@@ -79,7 +79,13 @@
               <span>5.0</span>
             </div>
           </div>
-          <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
+          <form action="{{ route('cartdetail.store') }}" method="POST" class="mx-3" style="display: inline-block;">
+              @csrf
+              <input type="hidden" name="produk_id" value={{$promo->produk->id}}>
+              <button  class="btn btn btn-outline-dark btn-sm mb-2" type="submit" style=" width:100%;">
+              Add To Cart
+              </button>
+          </form>
           <a href="{{ URL::to('produk/'.$promo->produk->slug_produk ) }}" type="button" class="btn btn-dark btn-sm mb-2 mx-3">Details</a>
         </div>
       </div>
@@ -127,7 +133,13 @@
               <span>5.0</span>
             </div>
           </div>
-          <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
+          <form action="{{ route('cartdetail.store') }}" method="POST" class="mx-3" style="display: inline-block;">
+              @csrf
+              <input type="hidden" name="produk_id" value={{$produk->id}}>
+              <button  class="btn btn btn-outline-dark btn-sm mb-2" type="submit" style=" width:100%;">
+              Add To Cart
+              </button>
+          </form>
           <a href="{{ URL::to('produk/'.$produk->slug_produk ) }}" type="button" class="btn btn-dark btn-sm mb-2 mx-3">Details</a>
         </div>
       </div>

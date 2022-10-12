@@ -36,6 +36,6 @@ class produk extends Model
     }
 
     public function promo() {
-        return $this->belongsTo('App\Models\ProdukPromo', 'produk_id');
+        return $this->hasOne('App\Models\ProdukPromo');
     }
 }

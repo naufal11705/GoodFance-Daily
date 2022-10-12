@@ -37,7 +37,8 @@ class HomepageController extends Controller
         return view('homepage.kontak', $data);
     }
 
-    public function kategori() {
+    public function kategori() 
+    {
         $itemproduk = Produk::orderBy('created_at', 'desc')->get();
         $itempromo = ProdukPromo::orderBy('created_at', 'desc')->get();
         $itemkategori = Kategori::orderBy('nama_kategori', 'asc')->get();
@@ -50,7 +51,8 @@ class HomepageController extends Controller
         return view('homepage.kategori', $data);
     }
 
-    public function kategoribyslug(Request $request, $slug) {
+    public function kategoribyslug(Request $request, $slug) 
+    {
         $itemproduk = Produk::orderBy('nama_produk', 'desc')
                             ->where('status', 'publish')
                             ->whereHas('kategori', function($q) use ($slug) {
@@ -74,7 +76,8 @@ class HomepageController extends Controller
         }
     }
 
-    public function produk(Request $request) {
+    public function produk(Request $request) 
+    {
         $itemproduk = Produk::orderBy('nama_produk', 'desc')
                             ->where('status', 'publish')
                             ->paginate(18);
@@ -87,7 +90,8 @@ class HomepageController extends Controller
         return view('homepage.produk', $data);
     }
 
-    public function produkdetail($id) {
+    public function produkdetail($id) 
+    {
         $itemproduk = Produk::where('slug_produk', $id)
                             ->where('status', 'publish')
                             ->first();
@@ -125,7 +129,7 @@ class HomepageController extends Controller
         return view('homepage.search', $data);
     }
 
-    public function allProduk(Request $request)
+    public function allProduk()
     {
         $itemproduk = Produk::orderBy('created_at', 'desc')->get();
         $itempromo = ProdukPromo::orderBy('created_at', 'desc')->get();

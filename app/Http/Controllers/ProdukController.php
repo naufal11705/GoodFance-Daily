@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Image;
 use App\Models\Produk;
+use App\Models\Kategori;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -20,7 +21,8 @@ class ProdukController extends Controller
      */
     public function index(Request $request)
     {
-        $itemproduk = Produk::orderBy('created_at', 'desc')->paginate(20);
+        $itemuser = $request->user();
+        $itemproduk = Produk::orderBy('created_at', 'desc')->where('user_id', $itemuser->id )->paginate(20);
         $data = array('title' => 'Produk',
                     'itemproduk' => $itemproduk);
         return view('produk.index', $data)->with('no', ($request->input('page', 1) - 1));

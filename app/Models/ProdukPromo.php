@@ -17,7 +17,7 @@ class ProdukPromo extends Model
     ];
 
     public function produk() {
-        return $this->belongsTo('App\Models\Produk','produk_id');
+        return $this->belongsTo('App\Models\Produk');
     }
 
     public function user() {
