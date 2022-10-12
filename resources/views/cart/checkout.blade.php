@@ -1,6 +1,6 @@
 @extends('layouts.template')
 @section('content')
-<div class="container">
+<div class="container mt-3">
   <div class="row">
     <div class="col col-8">
       @if(count($errors) > 0)
@@ -151,7 +151,7 @@
           </table>
         </div>
         <div class="card-footer">
-            <button type="submit" class="btn btn-warning btn-block w-100">Buat Pesanan</button>
+            <button type="submit" class="btn btn-warning btn-sm btn-block w-100">Buat Pesanan</button>
         </div>
       </div>
     </form>
