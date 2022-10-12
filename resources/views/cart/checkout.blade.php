@@ -151,7 +151,7 @@
           </table>
         </div>
         <div class="card-footer">
-            <button type="submit" class="btn btn-danger btn-block">Buat Pesanan</button>
+            <button type="submit" class="btn btn-warning btn-block w-100">Buat Pesanan</button>
         </div>
       </div>
     </form>
