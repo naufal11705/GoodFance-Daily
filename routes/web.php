@@ -80,3 +80,4 @@ Route::view('/cart_detail', 'cart_detail');
 Route::view('/account', 'account_set');
 Route::view('/dash', 'new_dash');
 Route::view('/checkout2', 'checkout');
+Route::view('/detail_produk', 'detail_produk');
