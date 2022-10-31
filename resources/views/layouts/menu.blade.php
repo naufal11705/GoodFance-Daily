@@ -5,7 +5,7 @@
     <div class="d-flex align-items-center justify-content-start">
       <!-- Navbar brand -->
       <a class="navbar-brand mt-lg-0 fw-bold" href="/">
-        GoodFance
+        GoodFance Dai<span style="color: #24FF00">ly</span>
       </a>
     </div>
 
@@ -13,10 +13,10 @@
       <form action="/search" method="POST" class="mx-3" style="display: inline-block; width:100%;">
         @csrf
         <div class="input-group ms-2">
-          <input name="search" style="height: 40px; border-radius: 30px 0 0 30px;" type="text" class="form-control" placeholder="Search">
-          <button style="height: 40px; border-radius: 0 30px 30px 0;" class="input-group-text bg-dark text-white border-0" type="submit">
+          <input name="search" style="height: 40px; border-radius: 10px 0 0 10px;" type="text" class="form-control" placeholder="Search">
+          <button style="height: 40px; border-radius: 0 10px 10px 0; background-color: #00E833;" class="input-group-text text-white border-0" type="submit">
             <span>
-              <i class="fa fa-search"></i>
+              <a>Search</a>
             </span>
           </button>
         </div>
@@ -56,6 +56,12 @@
         </ul>
       </div>
       @endauth
+      <!-- Mail -->
+      <button type="button" class="btn btn-transparent align-self-center shadow-none mt-2 mt-lg-0 mt-md-0 mt-xl-0">
+        <a class="text-dark fs-5" href="/chat">
+          <i class="fa-regular fa-envelope"></i>
+        </a>
+      </button>
       <!-- Cart -->
       <button type="button" class="btn btn-transparent align-self-center shadow-none mt-2 mt-lg-0 mt-md-0 mt-xl-0">
         <a class="text-dark fs-5" href="/cart">

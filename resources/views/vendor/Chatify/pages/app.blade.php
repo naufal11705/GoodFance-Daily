@@ -5,15 +5,15 @@
         {{-- Header and search bar --}}
         <div class="m-header">
             <nav>
-                <a href="#"><i class="fas fa-inbox"></i> <span class="messenger-headTitle">MESSAGES</span> </a>
+            <div class="d-flex align-items-center justify-content-start">
+                <a class="navbar-brand mt-lg-0 fw-bold" href="/">GoodFance Dai<span style="color: #24FF00">ly</span></a>
+        </div>
                 {{-- header buttons --}}
                 <nav class="m-header-right">
                     <a href="#"><i class="fas fa-cog settings-btn"></i></a>
                     <a href="#" class="listView-x"><i class="fas fa-times"></i></a>
                 </nav>
             </nav>
-            {{-- Search input --}}
-            <input type="text" class="messenger-search" placeholder="Search" />
             {{-- Tabs --}}
             <div class="messenger-listView-tabs">
                 <a href="#" @if($type == 'user') class="active-tab" @endif data-view="users">
@@ -21,6 +21,8 @@
                 <a href="#" @if($type == 'group') class="active-tab" @endif data-view="groups">
                     <span class="fas fa-users"></span> Groups</a>
             </div>
+            {{-- Search input --}}
+            <input type="text" class="messenger-search" placeholder="Search" />
         </div>
         {{-- tabs and lists --}}
         <div class="m-body contacts-container">
@@ -49,7 +51,6 @@
                     <a target="_blank" style="color:{{$messengerColor}};" href="https://chatify.munafio.com/notes#groups-feature">Click here</a> for more info!
                 </p>
              </div>
-
              {{-- ---------------- [ Search Tab ] ---------------- --}}
            <div class="messenger-tab search-tab app-scroll" data-view="search">
                 {{-- items --}}
