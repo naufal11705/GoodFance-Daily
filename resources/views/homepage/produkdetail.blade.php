@@ -225,6 +225,9 @@
                         <a href="{{ URL::to('checkout') }}" class="btn btn-outline-light">
                             Checkout
                         </a>
+                        <a href="{{ URL::to('chat/'.$itemproduk->user_id) }}" class="btn btn-outline-light">
+                            Chat
+                        </a>
                         <form action="{{ route('cartdetail.store') }}" method="POST">
                             @csrf
                             <input type="hidden" name="produk_id" value={{$itemproduk->id}}>
