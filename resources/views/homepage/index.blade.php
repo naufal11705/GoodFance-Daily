@@ -36,12 +36,10 @@
   <!-- end carousel -->
 </div>
 <!-- kategori produk -->
-<div class="bg-transparent" style="margin-left: 50px; margin-right: 50px; margin-top: 30px;">
-  <h4 style="margin-left: 15px;" class="fw-bolder">Categories</h4>
+<div class="bg-transparent" style="margin-left: 60px; margin-right: 60px; margin-top: 30px;">
   <div class="btn-group d-flex flex-wrap shadow-none mt-1 mt-lg-1 mt-md-1 mt-xl-1 ms-2 ms-lg-2 ms-md-2 ms-xl-2">
     @foreach($itemkategori as $kategori)
-    <a style="width: 150px; font-size: 13px;" href="category/{{ $kategori->slug_kategori }}" class="btn btn-outline-secondary rounded-3 align-self-center mt-1 mt-lg-1 mt-md-1 mt-xl-1 mx-2 mx-lg-2 mx-md-2 mx-xl-2 rounded">
-      <i class="fa-solid fa-person" style="margin-right: 10px;"></i>
+    <a style="width: 150px; font-size: 13px; background-color: white;" href="category/{{ $kategori->slug_kategori }}" class="btn btn-outline-secondary rounded-3 align-self-center mt-1 mt-lg-1 mt-md-1 mt-xl-1 mx-2 mx-lg-2 mx-md-2 mx-xl-2 rounded">
       {{ $kategori->nama_kategori }}</span>
     </a>
     @endforeach
@@ -50,11 +48,11 @@
 <!-- end kategori produk -->
   <!-- produk Promo-->
   <div style="margin-left: 50px; margin-right: 50px; margin-top: 30px;">
-    <h4 style="margin-left: 15px;" class="fw-bolder">Promo</h4>
+    <div style="margin-left: 15px; margin-right: 15px; height: 40px; background-color: #00E833;" class="input-group-text text-white border-0" type="submit"><span><a>Produk Promo</a></span></div>
     <div class="row row-cols-1 row-cols-lg-5 g-2 g-lg-3 ms-2 ms-lg-2 ms-md-2 ms-xl-2">
       @foreach($itempromo as $promo)
       <div class="col">
-        <div class="card" style="height: 415px;">
+        <div class="card" style="height: 415px; margin-top:30px;">
           <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
             <img src="{{ Storage::url($promo->produk->foto) }}" class="card-img-top" style="max-height: 190px; width: 100%;" alt="...">
           </div>
@@ -95,11 +93,11 @@
   <!-- end produk promo -->
   <!-- produk Terbaru-->
   <div style="margin-left: 50px; margin-right: 50px; margin-top: 30px;">
-    <h4 style="margin-left: 15px;" class="fw-bolder">Terbaru</h4>
+  <div style="margin-left: 15px; margin-right: 15px; height: 40px; background-color: #00E833;" class="input-group-text text-white border-0" type="submit"><span><a>Produk Terbaru</a></span></div>
     <div class="row row-cols-1 row-cols-lg-5 g-2 g-lg-3 ms-2 ms-lg-2 ms-md-2 ms-xl-2">
       @foreach($itemproduk as $produk)
       <div class="col">
-        <div class="card" style="height: 415px;">
+        <div class="card" style="height: 415px; margin-top: 30px;">
           <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
             <img src="{{ Storage::url($produk->foto) }}" class="card-img-top" style="max-height: 190px; width: 100%;" alt="...">
           </div>
