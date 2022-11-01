@@ -11,7 +11,7 @@
     <div class="d-flex align-items-center justify-content-end">
       <div class="d-flex align-items-center justify-content-start">
       <a style="font-size: 16px;" class="navbar-brand mt-lg-0 fw-bold">GoodFance Lainnya:</a>
-      <a style="font-size: 16px;" class="navbar-brand px-5" href="/">GoodFance Hyperbeast</a>
+      <a style="font-size: 16px;" class="navbar-brand px-5" href="/">GoodFance Hypebeast</a>
       <a style="font-size: 16px;" class="navbar-brand px-1" href="/">GoodFance Shoes</a>
     </div>
     <!-- Right elements -->
