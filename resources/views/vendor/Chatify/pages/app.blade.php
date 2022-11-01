@@ -6,7 +6,6 @@
         <div class="m-header">
             <nav>
             <div class="d-flex align-items-center justify-content-start">
-                <a class="navbar-brand mt-lg-0 fw-bold" href="/">GoodFance Dai<span style="color: #24FF00">ly</span></a>
         </div>
                 {{-- header buttons --}}
                 <nav class="m-header-right">
@@ -121,3 +120,4 @@
 
 @include('Chatify::layouts.modals')
 @include('Chatify::layouts.footerLinks')
+
