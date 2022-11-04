@@ -1,27 +1,24 @@
+@extends('layouts.template')
+@section('content')
 @include('Chatify::layouts.headLinks')
 <div class="messenger">
     {{-- ----------------------Users/Groups lists side---------------------- --}}
     <div class="messenger-listView">
-        {{-- Header and search bar --}}
+    {{-- Header and search bar --}}
         <div class="m-header">
             <nav>
-            <div class="d-flex align-items-center justify-content-start">
-        </div>
+                <a><i class="fas fa-envelope"></i></a>
+                <a><i>MESSAGES</i></a>
                 {{-- header buttons --}}
                 <nav class="m-header-right">
                     <a href="#"><i class="fas fa-cog settings-btn"></i></a>
                     <a href="#" class="listView-x"><i class="fas fa-times"></i></a>
                 </nav>
             </nav>
-            {{-- Tabs --}}
-            <div class="messenger-listView-tabs">
-                <a href="#" @if($type == 'user') class="active-tab" @endif data-view="users">
-                    <span class="far fa-user"></span> People</a>
-                <a href="#" @if($type == 'group') class="active-tab" @endif data-view="groups">
-                    <span class="fas fa-users"></span> Groups</a>
-            </div>
             {{-- Search input --}}
-            <input type="text" class="messenger-search" placeholder="Search" />
+            <div class="messenger-listView-tabs">
+                <input type="text" class="messenger-search" placeholder="Search" />
+            </div>
         </div>
         {{-- tabs and lists --}}
         <div class="m-body contacts-container">
@@ -34,9 +31,6 @@
                 <p class="messenger-title">Favorites</p>
                 <div class="messenger-favorites app-scroll-thin"></div>
                </div>
-
-               {{-- Saved Messages --}}
-               {!! view('Chatify::layouts.listItem', ['get' => 'saved']) !!}
 
                {{-- Contact --}}
                <div class="listOfContacts" style="width: 100%;height: calc(100% - 200px);position: relative;"></div>
@@ -117,7 +111,6 @@
         {!! view('Chatify::layouts.info')->render() !!}
     </div>
 </div>
-
 @include('Chatify::layouts.modals')
 @include('Chatify::layouts.footerLinks')
-
+@endsection
