@@ -11,6 +11,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
+    <!-- Font Family -->
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     <title> Home </title>
@@ -95,6 +98,9 @@
       }
       .btn-ubah:hover{
         text-decoration: underline;
+      }
+      body{
+        font-family: Poppins;
       }
       @media (min-width: 992px) {
         .card-3{

@@ -15,6 +15,7 @@
         list-style: none;
         justify-content: center;
         display: flex;
+        flex-direction: column;
         align-items: center;
         margin-top: 10px;
         overflow-x: auto;
@@ -145,59 +146,45 @@
 
 <div class="mt-1">	
     <div class="card rounded-0">	
-        <div class="row g-0">	
-            <div class="col-md-6 border-end">	
+        <div class="row g-3">
+            <div class="col-md-2">
+                <div class="thumbnail_images">	
+                    <ul id="thumbnail">	
+                        <ul>
+                            <img onclick="changeImage(this)" src="{{ Storage::url($itemproduk->foto) }}" width="70">
+                        </li>
+                        <li>
+                            <img onclick="changeImage(this)" src="{{ Storage::url($itemproduk->foto) }}" width="70">
+                        </li>
+                        <li>
+                            <img onclick="changeImage(this)" src="{{ Storage::url($itemproduk->foto) }}" width="70">
+                        </li>
+                        <li>
+                            <img onclick="changeImage(this)" src="{{ Storage::url($itemproduk->foto) }}" width="70">
+                        </li>	
+                    </ul>	
+                </div>                
+            </div>
+            <div class="col-md-4 border-end">	
                 <div class="d-flex flex-column justify-content-center">	
-                    <div class="main_image bg-secondary">	
+                    <div class="main_image">	
                         <img src="{{ Storage::url($itemproduk->foto) }}" id="main_product_image" class="img-fluid" width="590">	
                         <div id="zoom"></div>
-                    </div>	
-                    <div class="thumbnail_images">	
-                        <ul id="thumbnail">	
-                            <li>
-                                <img onclick="changeImage(this)" src="{{ Storage::url($itemproduk->foto) }}" width="70">
-                            </li>	
-                        </ul>	
-                    </div>	
+                    </div>		
                 </div>	
             </div>	
-            <div class="col-md-6 bg-dark text-white">	
+            <div class="col-md-6">	
                 <div class="p-3 right-side">	
                     <div class="align-items-center">	
                         <h3>{{ $itemproduk->nama_produk }}</h3>
                     </div>
                     <hr class="my-1">
                     <div class="mt-2">
-                        <button class="collapsible"><p class="text-collapse">See more <span><i class="fa-solid fa-chevron-down fs-6"></i></span></p></button>
-                        <div class="content">
-                            <h6 style="font-size: 16px;" class="fw-bold mt-2">About this Item:</h6>
-                            <p class="fw-normal">{{ $itemproduk->deskripsi_produk }}</p>
-                        </div>
+                        <p class="fw-normal">{{ $itemproduk->deskripsi_produk }}</p>
                     </div>
                     <div class="mt-1">
                         <h3>{{ $itemproduk->harga }}</h3>	
-                        <div class="ratings d-flex flex-row align-items-center">	
-                            <div class="d-flex flex-row">	
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>	
-                        </div>
-                    </div>	
-                    <div class="mt-3">	
-                        <span class="fw-bold">Color</span>	
-                        <div class="colors">	
-                            <ul id="marker">	
-                                <li id="marker-1"></li>	
-                                <li id="marker-2"></li>	
-                                <li id="marker-3"></li>	
-                                <li id="marker-4"></li>	
-                                <li id="marker-5"></li>	
-                            </ul>	
-                        </div>	
-                    </div>	
+                    </div>		
                     <div class="quantity">
                         <span>Stock = {{ $itemproduk->qty }}</span><br>
                         <span class="fw-bold">Quantity</span>
@@ -210,7 +197,20 @@
                             </select>
                         </div>
                     </div>
-                    <div class="buttons d-flex flex-row mt-5 gap-3">
+                    <div class="buttons d-flex flex-row mt-5 gap-3">	
+                        <a href="{{ URL::to('checkout') }}" class="btn text-white border-0" style="background-color: #00E833;">
+                            Beli
+                        </a>
+                        <form action="{{ route('cartdetail.store') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="produk_id" value={{$itemproduk->id}}>
+                            <button class="btn btn-block btn btn-outline-success" style="color: #00E833" type="submit">
+                            Add to Cart
+                            </button>
+                        </form>
+                        <a href="{{ URL::to('chat/'.$itemproduk->user_id) }}" class="btn text-white border-0" style="background-color: #00E833;">
+                            <i class="far fa-comment"></i> Chat
+                        </a>
                         <form action="{{ route('wishlist.store') }}" method="post">
                             @csrf
                             <input type="hidden" name="produk_id" value={{ $itemproduk->id }}>
@@ -220,19 +220,6 @@
                             @else
                             <i class="far fa-heart"></i> Tambah ke wishlist
                             @endif
-                            </button>
-                          </form>	
-                        <a href="{{ URL::to('checkout') }}" class="btn btn-outline-light">
-                            Checkout
-                        </a>
-                        <a href="{{ URL::to('chat/'.$itemproduk->user_id) }}" class="btn btn-outline-light">
-                            Chat
-                        </a>
-                        <form action="{{ route('cartdetail.store') }}" method="POST">
-                            @csrf
-                            <input type="hidden" name="produk_id" value={{$itemproduk->id}}>
-                            <button class="btn btn-block btn-primary" type="submit">
-                            <i class="fa fa-shopping-cart"></i> Tambahkan Ke Keranjang
                             </button>
                         </form>
                     </div>

@@ -36,7 +36,7 @@
       <!-- Account -->
       @auth
       <div class="dropdown hover ms-3" style="z-index: 2;">
-        <a class="bg-transparent text-black" href="#">Hello, {{ Auth::user()->name }} <br><span class="fw-bold">Account Settings</span>
+        <a class="bg-transparent text-black" href="#">Hello, {{ Auth::user()->name }} <br><span class="fw-bold">Account & List</span>
           <i class="fa-solid fa-caret-down"></i>
         </a>
         <ul class="menu-dropdown" style="width: 190px;">

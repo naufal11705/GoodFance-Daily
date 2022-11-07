@@ -8,7 +8,9 @@
         <div class="m-header">
             <nav>
                 <a><i class="fas fa-envelope"></i></a>
-                <a><i>MESSAGES</i></a>
+                <nav class="m-header-center">
+                    <a>Messages</a>
+                </nav>
                 {{-- header buttons --}}
                 <nav class="m-header-right">
                     <a href="#"><i class="fas fa-cog settings-btn"></i></a>
