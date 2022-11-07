@@ -19,7 +19,7 @@ class ImageController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:8192',
         ]);
         $itemuser = $request->user();
         $fileupload = $request->file('image');
@@ -43,7 +43,7 @@ class ImageController extends Controller
     }
     
     public function upload($fileupload, $itemuser, $folder) {
-        $path = $fileupload->store('files');
+        $path = $fileupload->store('public/files');
         $inputangambar['url'] = $path;
         $inputangambar['user_id'] = $itemuser->id;
         return Image::create($inputangambar);

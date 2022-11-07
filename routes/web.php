@@ -54,7 +54,6 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
     Route::post('image', [\App\Http\Controllers\ImageController::class,'store']);
     Route::delete('image/{id}', [\App\Http\Controllers\ImageController::class,'destroy']);
     Route::post('imagekategori',[\App\Http\Controllers\KategoriController::class,'uploadimage']);
-    Route::delete('image/{id}', [\App\Http\Controllers\ImageController::class,'destroy']);
     Route::delete('imagekategori/{id}', [\App\Http\Controllers\KategoriController::class,'deleteimage']);
     Route::post('produkimage',[\App\Http\Controllers\ProdukController::class,'uploadimage']);
     Route::delete('produkimage/{id}', [\App\Http\Controllers\ProdukController::class,'deleteimage']);
