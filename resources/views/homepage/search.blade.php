@@ -8,7 +8,7 @@
 </style>
 
 <!-- As a heading -->
-<nav class="navbar bg-dark shadow py-1">
+<nav class="navbar bg-success shadow py-1">
     <div class="container-fluid">
         <span class="navbar-brand text-white fs-6">
             <i class="fa-solid fa-circle-info me-1"></i>Hasil pencarian untuk '{{ $search }}'
@@ -100,32 +100,26 @@
     <h4 class="fw-semibold">Hasil</h4>
     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
         @foreach($produk as $produks)
-      <div class="col">
-        <div class="card" style="height: 405px;">
+        <div class="col">
+        <a href="{{ URL::to('produk/'.$produks->slug_produk ) }}" style="all: unset;">
+        <div class="card" style="height: 315px; margin-top: 30px; border-radius: 20px">
           <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
-            <img src="images/slide3.jpg" class="card-img-top" style="max-height: 190px; width: 100%;" alt="...">
+            <img src="{{ Storage::url($produks->foto) }}" class="card-img-top" style="max-height: 190px; width: 100%;" alt="...">
           </div>
           <div class="card-body">
             <div>
-              <p class="card-text">{{ $produks->nama_produk }}</p>
-            </div>
-            <div>
-              <p class="card-text fw-bold">Harga Diskon</p>
-            </div>
-            <div>
-              <button type="button" class="btn btn-danger"
-                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" disabled>
-              </button>
-              <span class="text-muted text-decoration-line-through">Harga discount</span>
-            </div>
+              <p class="card-text fw-bold">{{ $produks->nama_produk }}</p>
+            </div>              
             <div>
               <i class="fa-solid fa-star text-warning"></i>
-              <span>5.0</span>
+              <i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i>
             </div>
           </div>
-          <a type="button" class="btn btn btn-outline-dark btn-sm mb-2 mx-3">Add to cart</a>
-          <a href="{{ URL::to('produk/'.$produks->slug_produk ) }}" type="button" class="btn btn-dark btn-sm mb-2 mx-3">Details</a>
         </div>
+        </a>
       </div>
       @endforeach
         

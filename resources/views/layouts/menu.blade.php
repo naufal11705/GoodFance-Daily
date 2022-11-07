@@ -4,8 +4,9 @@
   <div class="container-fluid" style="margin-left: 55px; margin-right: 50px;">
     <div class="d-flex align-items-center justify-content-start">
       <!-- Navbar brand -->
-      <a class="navbar-brand mt-lg-0 fw-bold" href="/">
-        GoodFance Dai<span style="color: #24FF00">ly</span>
+      <a class="navbar-brand mt-lg-0" href="/">
+        <span style="font-weight: 700">GoodFance</span>
+        <span style="font-weight: 600"> Dai</span><span style="color: #24FF00">ly</span>
       </a>
     </div>
 
