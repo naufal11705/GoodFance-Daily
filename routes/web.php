@@ -61,7 +61,6 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
     Route::resource('promo',\App\Http\Controllers\ProdukPromoController::class);
     Route::get('loadprodukasync/{id}', [\App\Http\Controllers\ProdukController::class,'loadasync']);
     Route::resource('wishlist', App\Http\Controllers\WishlistController::class);
-    //Route::resource('countpesan', [App\Http\Controllers\Vendor\Chatify\MessagesController::class, 'unreadMessagesCount']);
 });
 
 Route::group(['middleware'=>'auth'], function() {
@@ -70,6 +69,7 @@ Route::group(['middleware'=>'auth'], function() {
     Route::resource('alamatpengiriman', \App\Http\Controllers\AlamatPengirimanController::class);
     Route::get('checkout', [\App\Http\Controllers\CartController::class,'checkout']);
     Route::patch('kosongkan/{id}', [\App\Http\Controllers\CartController::class,'kosongkan']);
+    //Route::view('chat', [\App\Http\Controllers\vendor\Chatify\MessagesController::class,'getPesanCount']);
 });
 
 Auth::routes();
