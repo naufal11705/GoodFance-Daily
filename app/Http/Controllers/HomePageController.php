@@ -20,14 +20,18 @@ class HomepageController extends Controller
         $itempromo = ProdukPromo::orderBy('created_at', 'desc')->limit(5)->get();
         $itemkategori = Kategori::orderBy('nama_kategori', 'asc')->limit(6)->get();
         $itemslide = Slideshow::get();
+        if ($user == null) {
+            $pesanCount = "0";
+        } else {
         $pesan = ChMessage::where('to_id', $user->id)->get();
         $pesanCount = count($pesan);
+        };
         $data = array('title' => 'Homepage',
-            'itemproduk' => $itemproduk,
-            'itempromo' => $itempromo,
-            'itemkategori' => $itemkategori,
-            'itemslide' => $itemslide,
-            'pesanCount' => $pesanCount
+        'itemproduk' => $itemproduk,
+        'itempromo' => $itempromo,
+        'itemkategori' => $itemkategori,
+        'itemslide' => $itemslide,
+        'pesanCount' => $pesanCount
         );
         return view('homepage.index', $data);
     }
