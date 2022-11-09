@@ -7,6 +7,7 @@ use App\Models\Kategori;
 use App\Models\Wishlist;
 use App\Models\Slideshow;
 use App\Models\ProdukPromo;
+use App\Models\ChMessage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -14,15 +15,19 @@ use Illuminate\Support\Facades\Auth;
 class HomepageController extends Controller
 {
     public function index(Request $request) {
+        $user = $request->user();
         $itemproduk = Produk::orderBy('created_at', 'desc')->limit(5)->get();
         $itempromo = ProdukPromo::orderBy('created_at', 'desc')->limit(5)->get();
         $itemkategori = Kategori::orderBy('nama_kategori', 'asc')->limit(6)->get();
         $itemslide = Slideshow::get();
+        $pesan = ChMessage::where('to_id', $user->id)->get();
+        $pesanCount = count($pesan);
         $data = array('title' => 'Homepage',
             'itemproduk' => $itemproduk,
             'itempromo' => $itempromo,
             'itemkategori' => $itemkategori,
-            'itemslide' => $itemslide
+            'itemslide' => $itemslide,
+            'pesanCount' => $pesanCount
         );
         return view('homepage.index', $data);
     }

@@ -39,6 +39,10 @@
         display: inline-block;
         position: relative;
       }
+      .icon-container{
+        width: 35px;
+        position: relative;
+      }
       .dropdown.toggle > input{
         display: block;
       }
@@ -102,6 +106,18 @@
       body{
         font-family: Poppins;
       }
+      .count-container {
+            padding:2px;
+            border-radius:2px;
+            background-color:#dc3545;
+            color:#fff;
+            font-size:11px;
+            line-height:11px;
+            position:absolute;
+            top:5px;
+            right:0
+        }
+        .popover-region-toggle::before{content:"";display:inline-block;border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:10px solid #ddd;position:absolute;bottom:0;right:7px}
       @media (min-width: 992px) {
         .card-3{
           margin-top: -50px;

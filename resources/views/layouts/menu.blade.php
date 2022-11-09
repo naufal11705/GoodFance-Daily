@@ -58,11 +58,16 @@
       </div>
       @endauth
       <!-- Mail -->
+      <div>
+        <div class="icon-container">
       <button type="button" class="btn btn-transparent align-self-center shadow-none mt-2 mt-lg-0 mt-md-0 mt-xl-0">
         <a class="text-dark fs-5" href="/chat">
           <i class="fa-regular fa-envelope"></i>
         </a>
-      </button>
+        <div class="count-container " aria-hidden="true">
+            {{ $pesanCount }}
+        </div>
+      </button></div></div>
       <!-- Cart -->
       <button type="button" class="btn btn-transparent align-self-center shadow-none mt-2 mt-lg-0 mt-md-0 mt-xl-0">
         <a class="text-dark fs-5" href="/cart">
