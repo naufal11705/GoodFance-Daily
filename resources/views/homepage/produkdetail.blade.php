@@ -182,14 +182,6 @@
                     </div>		
                     <div class="quantity">
                         <span>Stock = {{ $itemproduk->qty }}</span><br>
-                        <div class="input-group input-group-sm mt-1" style="width: 21.5%;">
-                            <label class="input-group-text" for="inputGroupSelect01">Qty</label>
-                            <select class="form-select" id="inputGroupSelect01">
-                                <option selected value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
-                        </div>
                     </div>
                     <div class="buttons d-flex flex-row mt-5 gap-3">	
                         <a href="{{ URL::to('checkout') }}" class="btn text-white border-0" style="background-color: #00E833; width: 100px">
@@ -202,9 +194,6 @@
                             Add to Cart
                             </button>
                         </form>
-                        <a href="{{ URL::to('chat/'.$itemproduk->user_id) }}" class="btn text-white border-0" style="background-color: #00E833;">
-                            <i class="far fa-comment"></i> 
-                        </a>
                         <form action="{{ route('wishlist.store') }}" method="post">
                             @csrf
                             <input type="hidden" name="produk_id" value={{ $itemproduk->id }}>
@@ -216,6 +205,9 @@
                             @endif
                             </button>
                         </form>
+                        <a href="{{ URL::to('chat/'.$itemproduk->user_id) }}" class="btn btn-sm btn-outline-secondary";>
+                            <i class="far fa-comment"></i> 
+                        </a>
                     </div>
                 </div>	
             </div>	
