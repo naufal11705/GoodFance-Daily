@@ -67,13 +67,6 @@
             <div>
               <span class="text-muted text-decoration-line-through">Rp. {{ number_format($promo->harga_awal, 2) }}</span>
             </div>
-            <div>
-              <i class="fa-solid fa-star text-warning"></i>
-              <i class="fa-solid fa-star text-warning"></i>
-              <i class="fa-solid fa-star text-warning"></i>
-              <i class="fa-solid fa-star text-warning"></i>
-              <i class="fa-solid fa-star text-warning"></i>
-            </div>
           </div>
         </div>
         </a>
@@ -109,13 +102,6 @@
                 <span>Rp. {{ number_format($produk->harga, 2) }}</span>
               </div>
           @endif
-            <div>
-              <i class="fa-solid fa-star text-warning"></i>
-              <i class="fa-solid fa-star text-warning"></i>
-              <i class="fa-solid fa-star text-warning"></i>
-              <i class="fa-solid fa-star text-warning"></i>
-              <i class="fa-solid fa-star text-warning"></i>
-            </div>
           </div>
         </div>
         </a>

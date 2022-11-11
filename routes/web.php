@@ -69,7 +69,6 @@ Route::group(['middleware'=>'auth'], function() {
     Route::resource('alamatpengiriman', \App\Http\Controllers\AlamatPengirimanController::class);
     Route::get('checkout', [\App\Http\Controllers\CartController::class,'checkout']);
     Route::patch('kosongkan/{id}', [\App\Http\Controllers\CartController::class,'kosongkan']);
-    //Route::view('chat', [\App\Http\Controllers\vendor\Chatify\MessagesController::class,'getPesanCount']);
 });
 
 Auth::routes();

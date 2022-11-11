@@ -13,7 +13,7 @@
                 </nav>
                 {{-- header buttons --}}
                 <nav class="m-header-right">
-                    <a href="#"><i class="fas fa-cog settings-btn"></i></a>
+                    <a href="/profile"><i class="fas fa-cog"></i></a>
                     <a href="#" class="listView-x"><i class="fas fa-times"></i></a>
                 </nav>
             </nav>

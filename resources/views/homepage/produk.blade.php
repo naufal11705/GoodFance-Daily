@@ -4,8 +4,8 @@
   <div class="row mt-4">
     <div class="col col-lg-3 col-md-3 mb-2">
       <div class="card">
-        <div class="card-header">
-          Kategori
+        <div class="card-header fw-bold">
+          <h3>Kategori</h3>
         </div>
         <ul class="list-group list-group-flush">
           @foreach($listkategori as $kategori)

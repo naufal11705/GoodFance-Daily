@@ -157,11 +157,6 @@
                             <img onclick="changeImage(this)" src="{{ Storage::url($itemproduk->foto) }}" width="70">
                         </li>
                         <li>
-                            <img onclick="changeImage(this)" src="{{ Storage::url($itemproduk->foto) }}" width="70">
-                        </li>
-                        <li>
-                            <img onclick="changeImage(this)" src="{{ Storage::url($itemproduk->foto) }}" width="70">
-                        </li>	
                     </ul>	
                 </div>                
             </div>
@@ -208,7 +203,7 @@
                             </button>
                         </form>
                         <a href="{{ URL::to('chat/'.$itemproduk->user_id) }}" class="btn text-white border-0" style="background-color: #00E833;">
-                            <i class="far fa-comment"></i> Chat
+                            <i class="far fa-comment"></i> 
                         </a>
                         <form action="{{ route('wishlist.store') }}" method="post">
                             @csrf
