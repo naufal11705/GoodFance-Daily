@@ -15,7 +15,7 @@ class TransaksiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $itemuser = $request->user();
         if ($itemuser->role == 'admin') {

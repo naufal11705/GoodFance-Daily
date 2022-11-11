@@ -230,14 +230,14 @@
     </div>
     
     <!-- menunya kita taruh persis di bawah <body> -->
-    @include('layouts.menu')
+    @include('admin.layouts.menu')
     <!-- di bawah menu baru kontennya -->
 
     <!-- Mulai sini kontennya depannya kasih @ sama yield-->
     @yield('content')
     <!-- Sampai sini -->
 
-    @include('layouts.footer')
+    @include('admin.layouts.footer')
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->

@@ -1,6 +1,6 @@
 @extends('layouts.template')
 @section('content')
-<div style="margin-left: 65px; margin-right: 65px; margin-top: 30px;">
+<div>
   <!-- carousel -->
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
