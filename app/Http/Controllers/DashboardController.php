@@ -14,7 +14,6 @@ class DashboardController extends Controller
         $produkCount = Produk::where('user_id', $user->id)->get()->count();
         $pesanCount = ChMessage::where('to_id', $user->id)->where('seen', '0')->get()->count();
         $data = array('title' => 'Dashboard','produkCount' => $produkCount,'pesanCount' => $pesanCount);
-        return view('dashboard.index', $data);
         if($user->role == "seller"){
             return view('dashboard.index', $data);
         }else if($user->role == "admin"){

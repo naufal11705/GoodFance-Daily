@@ -55,19 +55,38 @@ class MessagesController extends Controller
      * @param int $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index( $id = null)
+    public function index( $id = null, Request $request)
     {
+        $user = $request->user();
         $routeName= FacadesRequest::route()->getName();
         $type = in_array($routeName, ['user','group'])
             ? $routeName
             : 'user';
 
-        return view('Chatify::pages.app', [
-            'id' => $id ?? 0,
-            'type' => $type ?? 'user',
-            'messengerColor' => Auth::user()->messenger_color ?? $this->messengerFallbackColor,
-            'dark_mode' => Auth::user()->dark_mode < 1 ? 'light' : 'dark',
-        ]);
+        if($user->role == "admin"){
+            return view('Chatify::admin.pages.app', [
+                'id' => $id ?? 0,
+                'type' => $type ?? 'user',
+                'messengerColor' => Auth::user()->messenger_color ?? $this->messengerFallbackColor,
+                'dark_mode' => Auth::user()->dark_mode < 1 ? 'light' : 'dark',
+                'title' => 'GoodFance Chat',
+            ]);
+        }elseif($user->role == "seller"){
+            return view('Chatify::seller.pages.app', [
+                'id' => $id ?? 0,
+                'type' => $type ?? 'user',
+                'messengerColor' => Auth::user()->messenger_color ?? $this->messengerFallbackColor,
+                'dark_mode' => Auth::user()->dark_mode < 1 ? 'light' : 'dark',
+                'title' => 'GoodFance Chat',
+            ]);
+        }else{
+            return view('Chatify::pages.app', [
+                'id' => $id ?? 0,
+                'type' => $type ?? 'user',
+                'messengerColor' => Auth::user()->messenger_color ?? $this->messengerFallbackColor,
+                'dark_mode' => Auth::user()->dark_mode < 1 ? 'light' : 'dark',
+            ]);
+        }
     }
 
 
