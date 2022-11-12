@@ -25,42 +25,15 @@
             <p>Kategori Produk</p>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="/admin/produk" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-            <p>Add Produk</p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="/admin/promo" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-            <p>Promo Produk</p>
-          </a>
-        </li>
       </ul>
     </li>
-    <li class="nav-item has-treeview">
-      <a href="#" class="nav-link">
+    <li class="nav-item">
+      <a href="/transaksi" class="nav-link">
         <i class="nav-icon fas fa-shopping-cart"></i>
         <p>
           Transaksi
-          <i class="right fas fa-angle-left"></i>
         </p>
       </a>
-      <ul class="nav nav-treeview">
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-            <p>Active Page</p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-            <p>Inactive Page</p>
-          </a>
-        </li>
-      </ul>
     </li>
     <li class="nav-item has-treeview">
       <a href="" class="nav-link">
@@ -78,6 +51,14 @@
           </a>
         </li>
       </ul>
+    </li>
+    <li class="nav-item">
+      <a href="/chat" class="nav-link">
+        <i class="nav-icon fas fa-envelope"></i>
+        <p>
+          Chat
+        </p>
+      </a>
     </li>
     <li class="nav-item">
       <a href="#" class="nav-link">
