@@ -61,6 +61,14 @@
       </a>
     </li>
     <li class="nav-item">
+      <a href="admin/slideshow" class="nav-link">
+        <i class="nav-icon fas fa-image"></i>
+        <p>
+          Slideshow
+        </p>
+      </a>
+    </li>
+    <li class="nav-item">
       <a href="#" class="nav-link">
         <i class="nav-icon fas fa-sign-out-alt"></i>
         <p>
