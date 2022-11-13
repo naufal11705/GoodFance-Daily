@@ -25,18 +25,18 @@
         <div class="icon">
           <i class="ion ion-pie-graph"></i>
         </div>
-        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        <a href="seller/produk" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <div class="col-6 col-lg-3">
-      <div class="small-box bg-warning">
+      <div class="small-box bg-info">
         <div class="inner">
           <h3>{{ $pesanCount}}</h3>
 
           <p>Unreaded Messages</p>
         </div>
         <div class="icon">
-          <i class="ion ion-person-add"></i>
+          <i class="fas fa-envelope"></i>
         </div>
         <a href="/chat" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
       </div>
@@ -69,44 +69,86 @@
           </div>
         </div>
         <div class="card-body">
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>No</th>
-                <th>Kode</th>
-                <th>Nama</th>
-                <th>Kategori</th>
-                <th>Qty</th>
-                <th>Harga</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>PRO-1</td>
-                <td>Baju Atasan</td>
-                <td>Baju Anak</td>
-                <td>12 kodi</td>
-                <td>5.000</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>PRO-2</td>
-                <td>Gamis</td>
-                <td>Baju Wanita</td>
-                <td>20 kodi</td>
-                <td>25.000</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>PRO-3</td>
-                <td>Daster</td>
-                <td>Baju Wanita</td>
-                <td>20 kodi</td>
-                <td>125.000</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th width="50px">No</th>
+                  <th>Gambar</th>
+                  <th>Kode</th>
+                  <th>Nama</th>
+                  <th>Jumlah</th>
+                  <th>Harga</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach($itemproduk as $produk)
+                <tr>
+                  <td>
+                  {{ ++$no }}
+                  </td>
+                  <td>
+                   @if($produk->foto != null)
+                   <img src="{{ \Storage::url($produk->foto) }}" alt="{{ $produk->nama_kategori }}" width='150px' class="img-thumbnail mb-2">
+                   <br>
+                   <form action="{{ url('/admin/produkimage/'.$produk->id) }}" method="post" style="display:inline;">
+                     @csrf
+                     {{ method_field('delete') }}
+                     <button type="submit" class="btn btn-sm btn-danger mb-2">
+                       Hapus
+                     </button>                    
+                   </form>
+                   @else
+                   <form action="{{ url('/admin/produkimage') }}" method="post" enctype="multipart/form-data" class="form-inline">
+                     @csrf
+                     <div class="form-group">
+                       <input type="file" name="image" id="image">
+                       <input type="hidden" name="produk_id" value={{ $produk->id }}>
+                     </div>
+                     <div class="form-group">
+                       <button class="btn btn-primary">Upload</button>
+                     </div>
+                   </form>
+                    @endif
+                  </td>
+                  <td>
+                  {{ $produk->kode_produk }}
+                  </td>
+                  <td>
+                  {{ $produk->nama_produk }}
+                  </td>
+                  <td>
+                  {{ $produk->qty }} {{ $produk->satuan }}
+                  </td>
+                  <td>
+                  {{ number_format($produk->harga, 2) }}
+                  </td>
+                  <td>
+                  {{ $produk->status }}
+                  </td>
+                  <td>
+                    <a href="{{ route('produk.show', $produk->id) }}" class="btn btn-sm btn-primary mr-2 mb-2">
+                      Detail
+                    </a>
+                    <a href="{{ route('produk.edit', $produk->id) }}" class="btn btn-sm btn-primary mr-2 mb-2">
+                      Edit
+                    </a>
+                    <form action="{{ route('produk.destroy', $produk->id) }}" method="post" style="display:inline;">
+                      @csrf
+                      {{ method_field('delete') }}
+                      <button type="submit" class="btn btn-sm btn-danger mb-2">
+                        Hapus
+                      </button>                    
+                    </form>
+                  </td>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
+            {{ $itemproduk->links() }}
+          </div>
         </div>
       </div>
     </div>

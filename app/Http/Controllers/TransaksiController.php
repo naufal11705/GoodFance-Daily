@@ -30,6 +30,18 @@ class TransaksiController extends Controller
                         'itemuser' => $itemuser);
             return view('admin.transaksi.index', $data)->with('no', ($request->input('page', 1) - 1) * 20);
 
+        } elseif ($itemuser->role == 'seller') {
+            // kalo seller maka menampilkan semua cart
+            $itemorder = Order::whereHas('cart', function($q) use ($itemuser) {
+                            $q->where('status_cart', 'checkout');
+                            $q->where('user_id', $itemuser->id);
+                        })
+                        ->orderBy('created_at', 'desc')
+                        ->paginate(20);
+            $data = array('title' => 'Data Transaksi',
+                        'itemorder' => $itemorder,
+                        'itemuser' => $itemuser);
+            return view('seller.transaksi.index', $data)->with('no', ($request->input('page', 1) - 1) * 20);                        
         } else {
             // kalo member maka menampilkan cart punyanya sendiri
             $itemorder = Order::whereHas('cart', function($q) use ($itemuser) {
