@@ -34,14 +34,14 @@ class TransaksiController extends Controller
             // kalo seller maka menampilkan semua cart
             $itemorder = Order::whereHas('cart', function($q) use ($itemuser) {
                             $q->where('status_cart', 'checkout');
-                            $q->where('user_id', $itemuser->id);
                         })
                         ->orderBy('created_at', 'desc')
                         ->paginate(20);
             $data = array('title' => 'Data Transaksi',
                         'itemorder' => $itemorder,
                         'itemuser' => $itemuser);
-            return view('seller.transaksi.index', $data)->with('no', ($request->input('page', 1) - 1) * 20);                        
+            return view('seller.transaksi.index', $data)->with('no', ($request->input('page', 1) - 1) * 20);
+
         } else {
             // kalo member maka menampilkan cart punyanya sendiri
             $itemorder = Order::whereHas('cart', function($q) use ($itemuser) {
@@ -124,14 +124,19 @@ class TransaksiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, Request $request)
     {
         $itemuser = $request->user();
         if ($itemuser->role == 'admin') {
             $itemorder = Order::findOrFail($id);
             $data = array('title' => 'Form Edit Transaksi',
                         'itemorder' => $itemorder);
-            return view('transaksi.edit', $data)->with('no', 1);            
+            return view('admin.transaksi.edit', $data)->with('no', 1);
+        } elseif ($itemuser->role == 'seller') {
+            $itemorder = Order::findOrFail($id);
+            $data = array('title' => 'Form Edit Transaksi',
+                        'itemorder' => $itemorder);
+            return view('seller.transaksi.edit', $data)->with('no', 1);              
         } else {
             return abort('404');//kalo bukan admin maka akan tampil error halaman tidak ditemukan
         }
