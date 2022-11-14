@@ -70,6 +70,25 @@
                                     </span>
                                 @enderror
                             </div>
+                            @if($user->role == 'user' || $user->role == 'seller')      
+                            <div class="form-group col-md-12 mt-2">
+                                <label class="labels fs-6">Become a seller</label>
+                                <select name="role" id="role" class="form-control @error('role') is-invalid @enderror" autocomplete="role">
+                                @if($user->role == 'user')
+                                    <option value="user">User</option>
+                                    <option value="seller">Seller</option>
+                                @endif                    
+                                @if($user->role == 'seller')
+                                    <option value="seller">Seller</option>
+                                @endif 
+                                </select>
+                                @error('role')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            @endif
                             <div class="form-group mt-5 text-center">
                                 <button class="btn btn-info profile-button" type="submit">Save Profile</button>
                             </div>

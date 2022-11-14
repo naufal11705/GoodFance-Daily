@@ -42,7 +42,7 @@
         </a>
         <ul class="menu-dropdown" style="width: 190px;">
           <li><a href="{{ route('profile.edit') }}">Account</a></li>
-          <li><a style="padding-top: 2.5px;" href="/admin">Become a seller</a></li>
+          <li><a style="padding-top: 2.5px;" href="/profile">Become a seller</a></li>
           <li>
             <a style="padding-top: 2.5px; padding-bottom: 7px;" href="{{ route('logout') }}"
               onclick="event.preventDefault();
