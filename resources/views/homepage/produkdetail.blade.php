@@ -177,9 +177,20 @@
                     <div class="mt-2">
                         <p class="fw-normal">{{ $itemproduk->deskripsi_produk }}</p>
                     </div>
-                    <div class="mt-1">
-                        <h3>{{ $itemproduk->harga }}</h3>	
-                    </div>		
+                    @foreach($itempromo as $promo)
+                    @if($itemproduk->id == $promo->produk_id)
+                        <div>
+                            <h3>Rp. {{ number_format($promo->harga_akhir, 2) }}</h3>
+                        </div>
+                        <div>
+                            <span class="text-muted text-decoration-line-through">Rp. {{ number_format($promo->harga_awal, 2) }}</span>
+                        </div>              
+                    @else
+                        <div>
+                            <h3>Rp. {{ number_format($itemproduk->harga, 2) }}</h3>
+                        </div>
+                    @endif
+                    @endforeach		
                     <div class="quantity">
                         <span>Stock = {{ $itemproduk->qty }}</span><br>
                     </div>

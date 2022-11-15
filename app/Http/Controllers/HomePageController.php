@@ -95,6 +95,7 @@ class HomepageController extends Controller
         $itemproduk = Produk::where('slug_produk', $id)
                             ->where('status', 'publish')
                             ->first();
+        $itempromo = ProdukPromo::orderBy('created_at', 'desc')->limit(5)->get();
         if ($itemproduk) {
             if (Auth::user()) {//cek kalo user login
                 $itemuser = Auth::user();
@@ -103,7 +104,8 @@ class HomepageController extends Controller
                                         ->first();
                 $data = array('title' => $itemproduk->nama_produk,
                         'itemproduk' => $itemproduk,
-                        'itemwishlist' => $itemwishlist);
+                        'itemwishlist' => $itemwishlist,
+                        'itempromo' => $itempromo);
             } else {
                 $data = array('title' => $itemproduk->nama_produk,
                             'itemproduk' => $itemproduk);
@@ -118,6 +120,7 @@ class HomepageController extends Controller
     public function searching(Request $request)
     {
         $search = $request['search'];
+        $promo = ProdukPromo::orderBy('created_at', 'desc')->limit(5)->get();
         if ($search != "") {
             $produk = Produk::where('nama_produk','LIKE', '%'.$search.'%')
                             ->orWhereRelation('kategori','nama_kategori','LIKE', '%'.$search.'%')
@@ -125,7 +128,7 @@ class HomepageController extends Controller
         } else {
             $produk = Produk::all();
         }
-        $data = array('produk' => $produk,'search'=> $search);
+        $data = array('produk' => $produk,'search'=> $search,'promo' => $promo);
         return view('homepage.search', $data);
     }
 

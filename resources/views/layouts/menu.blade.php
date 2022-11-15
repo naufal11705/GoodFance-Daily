@@ -30,8 +30,7 @@
       @guest
       <div class="btn-group shadow-none mt-2 mt-lg-0 mt-md-0 mt-xl-0">
         <a style="width: 100px; font-size: 14px;" href="{{ route('login') }}" class="btn btn-outline-dark align-self-center mx-2 mx-lg-3 mx-md-2 mx-xl-3 rounded fw-semibold">Sign in</a>
-        <a style="width: 100px; font-size: 14px;" href="{{ route('register') }}" class="btn btn-dark align-self-center me-2 rounded fw-semibold">Sign up</a>
-      </div>
+        <a style="width: 100px; font-size: 14px; background-color: #00E833;" href="{{ route('register') }}" class="btn align-self-center me-2 rounded fw-semibold text-white">Sign up</a>      </div>
       @endguest
 
       <!-- Account -->
@@ -79,6 +78,7 @@
           <i class="fas fa-shopping-cart"></i>
         </a>
       </button>
+      @auth
       @if(Auth::user()->role == 'seller')
         <button type="button" class="btn btn-transparent align-self-center shadow-none mt-2 mt-lg-0 mt-md-0 mt-xl-0">
         <a class="text-dark fs-5" href="/seller">
@@ -93,6 +93,7 @@
         </a>
       </button>
       @endif
+      @endauth
     <!-- Right elements -->
   </div>
   <!-- Container wrapper -->

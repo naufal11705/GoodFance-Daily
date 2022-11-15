@@ -73,7 +73,21 @@
           <div class="card-body">
             <div>
               <p class="card-text fw-bold">{{ $produks->nama_produk }}</p>
-            </div>              
+            </div>
+            @foreach($promo as $promos)
+            @if($produks->id == $promos->produk_id)
+                <div>
+                    <span>Rp. {{ number_format($promos->harga_akhir, 2) }}</span>
+                </div>
+                <div>
+                    <span class="text-muted text-decoration-line-through">Rp. {{ number_format($promos->harga_awal, 2) }}</span>
+                </div>              
+            @else
+                <div>
+                    <span>Rp. {{ number_format($produks->harga, 2) }}</span>
+                </div>
+            @endif
+            @endforeach            
           </div>
         </div>
         </a>
