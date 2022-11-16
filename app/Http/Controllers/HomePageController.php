@@ -65,11 +65,13 @@ class HomepageController extends Controller
         $itemkategori = Kategori::where('slug_kategori', $slug)
                                 ->where('status', 'publish')
                                 ->first();
+        $itempromo = ProdukPromo::orderBy('created_at', 'desc')->limit(5)->get();
         if ($itemkategori) {
             $data = array('title' => $itemkategori->nama_kategori,
                         'itemproduk' => $itemproduk,
                         'listkategori' => $listkategori,
-                        'itemkategori' => $itemkategori);
+                        'itemkategori' => $itemkategori,
+                        'itempromo' => $itempromo);
             return view('homepage.produk', $data)->with('no', ($request->input('page') - 1) * 18);            
         } else {
             return abort('404');
@@ -108,7 +110,8 @@ class HomepageController extends Controller
                         'itempromo' => $itempromo);
             } else {
                 $data = array('title' => $itemproduk->nama_produk,
-                            'itemproduk' => $itemproduk);
+                            'itemproduk' => $itemproduk,
+                            'itempromo' => $itempromo);
             }
             return view('homepage.produkdetail', $data);            
         } else {

@@ -70,7 +70,7 @@
                      </button>                    
                    </form>
                    @else
-                   <form action="{{ url('/admin/produkimage') }}" method="post" enctype="multipart/form-data" class="form-inline">
+                   <form action="{{ url('/seller/produkimage') }}" method="post" enctype="multipart/form-data" class="form-inline">
                      @csrf
                      <div class="form-group">
                        <input type="file" name="image" id="image">

@@ -35,8 +35,8 @@
         justify-content: center;
         align-items: center;
         border-bottom: 1px solid #eee;
-        height: 400px;
-        width: 100%;
+        height: 75%;
+        width: 75%;
         overflow: hidden;
     }
     .content p{

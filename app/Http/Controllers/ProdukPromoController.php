@@ -27,11 +27,13 @@ class ProdukPromoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         // kita ambil data produk
+        $itemuser = $request->user();
         $itemproduk = Produk::orderBy('nama_produk', 'desc')
                             ->where('status', 'publish')
+                            ->where('user_id', $itemuser->id)
                             ->get();
         $data = array('title' => 'Form Produk Promo',
                     'itemproduk' => $itemproduk);
