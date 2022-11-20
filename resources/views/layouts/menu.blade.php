@@ -62,11 +62,13 @@
           <a class="text-dark fs-5" href="/chat">
             <i class="fa-regular fa-envelope"></i>
           </a>
+          @auth
           @if($countMessage >= '1')
           <div class="count-container " aria-hidden="true">
                 {{ $countMessage }}
           </div>
           @endif
+          @endauth
         </button>
       </div>
       <!-- Wishlist -->
@@ -75,11 +77,13 @@
           <a class="text-dark fs-5" href="/wishlist">
             <i class="fa-regular fa-heart"></i>
           </a>
+          @auth
           @if($countWishlist >= '1')
           <div class="count-container " aria-hidden="true">
                 {{ $countWishlist }}
           </div>
           @endif
+          @endauth
         </button>
       </div>
       <!-- Cart -->
@@ -88,11 +92,13 @@
           <a class="text-dark fs-5" href="/cart">
             <i class="fas fa-shopping-cart"></i>
           </a>
+          @auth
           @if($countCart >= '1')
             <div class="count-container " aria-hidden="true">
                   {{ $countCart }}
             </div>
-            @endif
+          @endif
+          @endauth
         </button>
       </div>
       @auth

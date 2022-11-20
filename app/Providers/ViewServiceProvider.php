@@ -30,15 +30,23 @@ class ViewServiceProvider extends ServiceProvider
     {
         View::composer('layouts.menu', function ($view) {
             $user = Auth::user();
-            $countWishlist = Wishlist::where('user_id', $user->id)->count();
-            $countMessage = ChMessage::where('to_id', $user->id)->where('seen', '0')->get()->count();
-            $countCart = Cart::where('user_id', $user->id)->where('status_cart', 'cart')->first()->detail()->count();
+            if (Auth::user()) {
+                $countWishlist = Wishlist::where('user_id', $user->id)->count();
+                $countMessage = ChMessage::where('to_id', $user->id)->where('seen', '0')->get()->count();
+                $checkCart = Cart::where('user_id', $user->id)->where('status_cart', 'cart')->count();
 
-            $view->with([
-                'countWishlist' => $countWishlist,
-                'countMessage' => $countMessage,
-                'countCart' => $countCart,
-            ]);
+                if ($checkCart > 0) {
+                    $countCart = Cart::where('user_id', $user->id)->where('status_cart', 'cart')->first()->detail()->count();
+                } else {
+                    $countCart = '0';
+                }
+
+                $view->with([
+                    'countWishlist' => $countWishlist,
+                    'countMessage' => $countMessage,
+                    'countCart' => $countCart,
+                ]);
+            }
         });
     }
 }
