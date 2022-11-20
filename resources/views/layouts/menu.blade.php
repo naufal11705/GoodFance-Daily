@@ -57,27 +57,44 @@
       </div>
       @endauth
       <!-- Mail -->
-      <div>
-        <div class="icon-container">
-      <button type="button" class="btn btn-transparent align-self-center shadow-none mt-2 mt-lg-0 mt-md-0 mt-xl-0">
-        <a class="text-dark fs-5" href="/chat">
-          <i class="fa-regular fa-envelope"></i>
-        </a>
-        <!--<div class="count-container " aria-hidden="true">
-            3
-        </div>-->
-      </button></div></div>
+      <div class="icon-container">
+        <button type="button" class="btn btn-transparent align-self-center shadow-none mt-2 mt-lg-0 mt-md-0 mt-xl-0">
+          <a class="text-dark fs-5" href="/chat">
+            <i class="fa-regular fa-envelope"></i>
+          </a>
+          @if($countMessage >= '1')
+          <div class="count-container " aria-hidden="true">
+                {{ $countMessage }}
+          </div>
+          @endif
+        </button>
+      </div>
+      <!-- Wishlist -->
+      <div class="icon-container">
+        <button type="button" class="btn btn-transparent align-self-center shadow-none mt-2 mt-lg-0 mt-md-0 mt-xl-0">
+          <a class="text-dark fs-5" href="/wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </a>
+          @if($countWishlist >= '1')
+          <div class="count-container " aria-hidden="true">
+                {{ $countWishlist }}
+          </div>
+          @endif
+        </button>
+      </div>
       <!-- Cart -->
-      <button type="button" class="btn btn-transparent align-self-center shadow-none mt-2 mt-lg-0 mt-md-0 mt-xl-0">
-        <a class="text-dark fs-5" href="/wishlist">
-          <i class="fa-regular fa-heart"></i>
-        </a>
-      </button>
-      <button type="button" class="btn btn-transparent align-self-center shadow-none mt-2 mt-lg-0 mt-md-0 mt-xl-0">
-        <a class="text-dark fs-5" href="/cart">
-          <i class="fas fa-shopping-cart"></i>
-        </a>
-      </button>
+      <div class="icon-container">
+        <button type="button" class="btn btn-transparent align-self-center shadow-none mt-2 mt-lg-0 mt-md-0 mt-xl-0">
+          <a class="text-dark fs-5" href="/cart">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+          @if($countCart >= '1')
+            <div class="count-container " aria-hidden="true">
+                  {{ $countCart }}
+            </div>
+            @endif
+        </button>
+      </div>
       @auth
       @if(Auth::user()->role == 'seller')
         <button type="button" class="btn btn-transparent align-self-center shadow-none mt-2 mt-lg-0 mt-md-0 mt-xl-0">
