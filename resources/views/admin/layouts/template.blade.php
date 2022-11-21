@@ -14,6 +14,8 @@
     <!-- Font Family -->
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
+    <link href="{{ ('img/avatar.png') }}" rel="shortcut icon">
+
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     <title> Home </title>

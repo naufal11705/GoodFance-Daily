@@ -144,8 +144,8 @@
     }
 </style>
 
-<div class="mt-1">	
-    <div class="card rounded-0">	
+<div class="mt-0">	
+    <div class="card rounded-0" style="height: 500px; justify-content: center;">	
         <div class="row g-3">
             <div class="col-md-2">
                 <div class="thumbnail_images">	
@@ -195,9 +195,6 @@
                         <span>Stock = {{ $itemproduk->qty }}</span><br>
                     </div>
                     <div class="buttons d-flex flex-row mt-5 gap-3">	
-                        <a href="{{ URL::to('checkout') }}" class="btn text-white border-0" style="background-color: #00E833; width: 100px">
-                            Beli
-                        </a>
                         <form action="{{ route('cartdetail.store') }}" method="POST">
                             @csrf
                             <input type="hidden" name="produk_id" value={{$itemproduk->id}}>
@@ -208,7 +205,7 @@
                         <form action="{{ route('wishlist.store') }}" method="post">
                             @csrf
                             <input type="hidden" name="produk_id" value={{ $itemproduk->id }}>
-                            <button type="submit" class="btn btn-sm btn-outline-secondary">
+                            <button type="submit" class="btn btn-sm btn-outline-secondary" style="height: 37px;">
                             @if(isset($itemwishlist) && $itemwishlist)
                             <i class="fas fa-heart"></i> Tambah ke wishlist
                             @else
@@ -216,7 +213,7 @@
                             @endif
                             </button>
                         </form>
-                        <a href="{{ URL::to('chat/'.$itemproduk->user_id) }}" class="btn btn-sm btn-outline-secondary";>
+                        <a href="{{ URL::to('chat/'.$itemproduk->user_id) }}" class="btn btn-sm btn-outline-secondary" style="padding-top: 7px; width: 37px;">
                             <i class="far fa-comment"></i> 
                         </a>
                     </div>

@@ -101,9 +101,6 @@
                   <button type="submit" class="btn btn-warning btn-sm px-lg-5 px-1 btn-block">Kosongkan</button>
                 </form>
               </div>
-              <div class="px-md-0 px-1 fs-6" id="footer-font">
-                  <b class="pl-md-4">SUBTOTAL: <span class="pl-md-4">Rp. {{ number_format($detail->subtotal, 2) }}</span></b>
-              </div>
               <div>
                   <a href="/checkout" class="btn btn-sm btn-info text-dark px-lg-5 px-1">Checkout</a>
               </div>

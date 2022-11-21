@@ -9,7 +9,7 @@
           Dashboard
         </p>
       </a>
-    </li>
+    </li></br>
     <li class="nav-item has-treeview">
       <a href="#" class="nav-link">
         <i class="nav-icon fas fa-folder-open"></i>
@@ -26,7 +26,7 @@
           </a>
         </li>
       </ul>
-    </li>
+    </li></br>
     <li class="nav-item">
       <a href="/transaksi" class="nav-link">
         <i class="nav-icon fas fa-shopping-cart"></i>
@@ -34,7 +34,7 @@
           Transaksi
         </p>
       </a>
-    </li>
+    </li></br>
     <li class="nav-item">
       <a href="/chat" class="nav-link">
         <i class="nav-icon fas fa-envelope"></i>
@@ -42,7 +42,7 @@
           Chat
         </p>
       </a>
-    </li>
+    </li></br>
     <li class="nav-item">
       <a href="admin/slideshow" class="nav-link">
         <i class="nav-icon fas fa-image"></i>
@@ -50,7 +50,7 @@
           Slideshow
         </p>
       </a>
-    </li>
+    </li></br>
     <li class="nav-item">
       <a href="/logout" class="nav-link">
         <i class="nav-icon fas fa-sign-out-alt"></i>

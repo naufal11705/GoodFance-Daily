@@ -10,6 +10,7 @@
         </p>
       </a>
     </li>
+    <br>
     <li class="nav-item has-treeview">
       <a href="#" class="nav-link">
         <i class="nav-icon fas fa-folder-open"></i>
@@ -33,6 +34,7 @@
         </li>
       </ul>
     </li>
+  </br>
     <li class="nav-item">
       <a href="/transaksi" class="nav-link">
         <i class="nav-icon fas fa-shopping-cart"></i>
@@ -41,6 +43,7 @@
         </p>
       </a>
     </li>
+    <br>
     <li class="nav-item">
       <a href="/chat" class="nav-link">
         <i class="nav-icon fas fa-envelope"></i>
@@ -49,6 +52,7 @@
         </p>
       </a>
     </li>
+  </br>
     <li class="nav-item">
       <a href="/logout" class="nav-link">
         <i class="nav-icon fas fa-sign-out-alt"></i>

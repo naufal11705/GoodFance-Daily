@@ -111,7 +111,6 @@
   </div>
   <!-- end produk terbaru -->
   <!-- tentang toko -->
-  <hr>
   <div class="text-center text-white py-1 mt-4" style="background-color: #00E833; margin-left: auto; margin-right: auto;"><p><h4><b>GoodFance</b> Daily</h4></p></div>
   <!-- end tentang toko -->
   @endsection

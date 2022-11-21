@@ -26,8 +26,8 @@
                   <th width="50px">No</th>
                   <th>Gambar</th>
                   <th>Title</th>
-                  <th>content</th>
-                  <th></th>
+                  <th>Content</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -63,31 +63,38 @@
             {{ $itemslideshow->links() }}
           </div>
         </div>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-4">
-              <form action="{{ url('/admin/slideshow') }}" method="post" enctype="multipart/form-data">
-                @csrf
-                <div class="form-group">
-                  <label for="foto">Foto</label>
-                  <br />
-                  <input type="file" name="image" id="image">
-                </div>
-                <div class="form-group">
-                  <label for="caption_title">Title</label>
-                  <input type="text" name="caption_title" class="form-control">
-                </div>
-                <div class="form-group">
-                  <label for="caption_content">Content</label>
-                  <textarea name="caption_content" id="caption_content" rows="3" class="form-control"></textarea>
-                </div>
-                <div class="form-group">
-                  <button class="btn btn-primary">Upload</button>
-                </div>
-              </form>
-
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title">Tambahkan Slideshow</h4>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-4">
+          <form action="{{ url('/admin/slideshow') }}" method="post" enctype="multipart/form-data">
+            @csrf
+            <div class="form-group">
+              <label for="foto">Foto</label>
+              <br />
+              <input type="file" name="image" id="image">
             </div>
-          </div>
+            <div class="form-group">
+              <label for="caption_title">Title</label>
+              <input type="text" name="caption_title" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="caption_content">Content</label>
+              <textarea name="caption_content" id="caption_content" rows="3" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary">Upload</button>
+            </div>
+          </form>
+
         </div>
       </div>
     </div>

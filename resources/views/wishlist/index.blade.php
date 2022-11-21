@@ -1,6 +1,6 @@
 @extends('layouts.template')
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid" style="width: 92%; margin-top: 50px; margin-bottom: 50px;">
   <div class="row">
     <div class="col">
       <div class="card">

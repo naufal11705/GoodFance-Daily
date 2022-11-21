@@ -12,7 +12,7 @@
         <div class="icon">
           <i class="ion ion-person"></i>
         </div>
-        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        
       </div>
     </div>
 
@@ -26,7 +26,7 @@
         <div class="icon">
           <i class="ion ion-person"></i>
         </div>
-        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        
       </div>
     </div>
   </div>
@@ -37,7 +37,7 @@
         <div class="card-header">
           <h4 class="card-title">Produk Baru</h4>
           <div class="card-tools">
-            <a href="#" class="btn btn-sm btn-primary">
+            <a href="#" class="btn btn-sm btn-primary" style="background-color: #24FF00; border: none;">
               More
             </a>
           </div>
@@ -52,7 +52,6 @@
                   <th>Nama</th>
                   <th>Jumlah</th>
                   <th>Harga</th>
-                  <th></th>
                 </tr>
               </thead>
               <tbody>

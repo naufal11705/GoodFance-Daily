@@ -8,15 +8,15 @@
 </style>
 
 <!-- As a heading -->
-<nav class="navbar bg-success shadow py-1">
-    <div class="container-fluid">
-        <span class="navbar-brand text-white fs-6">
+<nav class="navbar py-1" style="background-color: #DEFCE5; padding-right: 57px; padding-left: 57px;">
+    <div class="container-fluid" style="background-color: #DEFCE5;">
+        <span class="navbar-brand text-black fs-6">
             <i class="fa-solid fa-circle-info me-1"></i>Hasil pencarian untuk '{{ $search }}'
         </span>
         <div class="">
-            <button class="btn btn-info text-white" style="padding: 3px 10px 3px 10px" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+            <!--<button class="btn btn-info text-white" style="padding: 3px 10px 3px 10px; background-color: #00E833; border: none;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
                 <i class="fa-solid fa-filter me-1"></i>Filter
-            </button>
+            </button>-->
 
             <div class="offcanvas offcanvas-top" style="height: 210px;" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
                 <div class="offcanvas-header pb-2">
@@ -60,8 +60,7 @@
     </div>
 </nav>
 
-<div class="container-fluid mt-4">
-    <h4 class="fw-semibold">Hasil</h4>
+<div class="container-fluid mt-4" style="padding-right: 65px; padding-left: 65px;">
     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
         @foreach($produk as $produks)
         <div class="col">
@@ -96,5 +95,6 @@
         
     </div>
 </div>
+ <div class="text-center text-white py-3 mt-4" style="background-color: #00E833; margin-left: auto; margin-right: auto;"><p><h4><b>GoodFance</b> Daily</h4></p></div>
 
 @endsection

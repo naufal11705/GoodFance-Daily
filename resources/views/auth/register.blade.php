@@ -3,9 +3,12 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-4">
+        <div class="col">
+            <img class="img-responsive"src="{{ ('img/welcome.svg') }}" style="width: auto; height: auto; margin-top: -40px">
+        </div>
+        <div class="col-md-4" style="margin-top: 50px;">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header" style="text-align: center; background-color: #24FF00; font-weight: 700; font-size: 16pt; color: white;">{{ __('Register') }}</div>
 
                 <div class="card-body">
                     @if(count($errors) > 0)
@@ -53,7 +56,7 @@
                                     <input type="password" name="password_confirmation" id="password_confirmation" class="form-control">
                                 </div>
                                 <div class="form-group mt-2">
-                                    <button type="submit" class="btn btn-primary mb-4">Register</button>
+                                    <button type="submit" class="btn mb-4" style="background-color: #24FF00; color: white;">Register</button>
                                     <p>Sudah punya akun? Login <a href="{{ route('login') }}" class="text-decoration-none">disini</a></p>
                                 </div>
                             </div>
