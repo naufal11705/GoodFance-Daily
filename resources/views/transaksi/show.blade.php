@@ -1,5 +1,9 @@
 @extends('layouts.template')
 @section('content')
+<script type="text/javascript"
+  src="https://app.sandbox.midtrans.com/snap/snap.js"
+  data-client-key="SB-Mid-client-CBYPedFgozNjoKv6">
+</script>
 <div class="container-fluid">
   <div class="row">
     <div class="col col-lg-8 col-md-8 mb-2">
@@ -58,6 +62,7 @@
         <div class="card-footer">
           <a href="{{ route('transaksi.index') }}" class="btn btn-sm btn-danger">Tutup</a>
           <a href="{{ URL::to('transaksi/'.$itemcart->id.'/cetak_pdf') }}" class="btn btn-sm btn-warning">Cetak</a>
+          <a id="pay-button" class="btn btn-sm btn-success">Bayar</a>
         </div>
       </div>
     </div>
@@ -142,4 +147,13 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  // For example trigger on button clicked, or any time you need
+  var payButton = document.getElementById('pay-button');
+  payButton.addEventListener('click', function () {
+    // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
+    window.snap.pay('{{ $snap_token }}');
+    // customer will be redirected after completing payment pop-up
+  });
+</script>
 @endsection

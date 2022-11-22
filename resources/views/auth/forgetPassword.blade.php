@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col">
-            <img class="img-responsive"src="{{ ('') }}" style="width: auto; height: auto; margin-top: -100px">
+            <img class="img-responsive"src="{{ ('img/hello.svg') }}" style="width: auto; height: auto; margin-top: -100px">
         </div>
         <div class="col-md-4" style="margin-top: 40px;">
             <div style="margin-bottom: 50px;">

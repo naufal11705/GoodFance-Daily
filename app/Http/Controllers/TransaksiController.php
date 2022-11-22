@@ -7,7 +7,9 @@ use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Models\AlamatPengiriman;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use PDF;
+use Mail;
 
 class TransaksiController extends Controller
 {
@@ -125,10 +127,29 @@ class TransaksiController extends Controller
     {
         $no = 0;
         $itemcart = Cart::where('id', $id)->first();
+        \Midtrans\Config::$serverKey = 'SB-Mid-server-rCmYLZ93kPNmfms-1RiNaIrx';
+        \Midtrans\Config::$isProduction = false;
+        \Midtrans\Config::$isSanitized = true;
+        \Midtrans\Config::$is3ds = true;
+        
+        $params = array(
+            'transaction_details' => array(
+                'order_id' => rand(),
+                'gross_amount' => $itemcart->total,
+            ),
+            'customer_details' => array(
+                'first_name' => Auth::user()->name,
+                'email' => Auth::user()->email,
+                'phone' => Auth::user()->phone,
+            ),
+        );
+        $snapToken = \Midtrans\Snap::getSnapToken($params);
         $data = array('title' => 'Detail Transaksi',
                     'no' => $no,
-                    'itemcart' => $itemcart);
+                    'itemcart' => $itemcart,
+                    'snap_token' => $snapToken);
         return view('transaksi.show', $data);
+
     }
 
     /**
@@ -186,6 +207,7 @@ class TransaksiController extends Controller
     	$pdf = PDF::loadview('transaksi.transaksi_pdf',[
                     'itemcart'=>$itemcart,
                     'no'=>$no])->setOptions(['defaultFont' => 'poppins']);
+                    
     	return $pdf->download('laporan.pdf');
     }
 }
