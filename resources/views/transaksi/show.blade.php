@@ -63,6 +63,10 @@
           <a href="{{ route('transaksi.index') }}" class="btn btn-sm btn-danger">Tutup</a>
           <a href="{{ URL::to('transaksi/'.$itemcart->id.'/cetak_pdf') }}" class="btn btn-sm btn-warning">Cetak</a>
           <a id="pay-button" class="btn btn-sm btn-success">Bayar</a>
+          <form action="" id="submit_form" method="POST">
+              @csrf
+              <input type="hidden" name="json" id="json_callback">
+          </form>
         </div>
       </div>
     </div>
@@ -148,12 +152,36 @@
   </div>
 </div>
 <script type="text/javascript">
-  // For example trigger on button clicked, or any time you need
-  var payButton = document.getElementById('pay-button');
-  payButton.addEventListener('click', function () {
-    // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
-    window.snap.pay('{{ $snap_token }}');
-    // customer will be redirected after completing payment pop-up
-  });
+      // For example trigger on button clicked, or any time you need
+      var payButton = document.getElementById('pay-button');
+      payButton.addEventListener('click', function () {
+        // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
+        window.snap.pay('{{$snap_token}}', {
+          onSuccess: function(result){
+            /* You may add your own implementation here */
+            console.log(result);
+            send_response_to_form(result);
+          },
+          onPending: function(result){
+            /* You may add your own implementation here */
+            console.log(result);
+            alert(result);
+            send_response_to_form(result);
+          },
+          onError: function(result){
+            /* You may add your own implementation here */
+            console.log(result);
+            send_response_to_form(result);
+          },
+          onClose: function(){
+            /* You may add your own implementation here */
+          }
+        })
+      });
+      function send_response_to_form(result){
+        document.getElementById('json_callback').value = JSON.stringify(result);
+        $('#submit_form').submit();
+      }
+    </script>
 </script>
 @endsection

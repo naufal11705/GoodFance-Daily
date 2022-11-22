@@ -127,14 +127,15 @@ class TransaksiController extends Controller
     {
         $no = 0;
         $itemcart = Cart::where('id', $id)->first();
+        $detail = $itemcart->detail;
         \Midtrans\Config::$serverKey = 'SB-Mid-server-rCmYLZ93kPNmfms-1RiNaIrx';
         \Midtrans\Config::$isProduction = false;
         \Midtrans\Config::$isSanitized = true;
         \Midtrans\Config::$is3ds = true;
-        
+        if($itemcart->token == null){
         $params = array(
             'transaction_details' => array(
-                'order_id' => rand(),
+                'order_id' => 'Fance-'.rand(),
                 'gross_amount' => $itemcart->total,
             ),
             'customer_details' => array(
@@ -144,6 +145,10 @@ class TransaksiController extends Controller
             ),
         );
         $snapToken = \Midtrans\Snap::getSnapToken($params);
+        $itemcart->update(['token' => $snapToken]);
+        } else {
+            $snapToken = $itemcart->token; 
+        }
         $data = array('title' => 'Detail Transaksi',
                     'no' => $no,
                     'itemcart' => $itemcart,
@@ -210,4 +215,5 @@ class TransaksiController extends Controller
                     
     	return $pdf->download('laporan.pdf');
     }
+
 }

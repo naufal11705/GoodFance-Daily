@@ -13,6 +13,7 @@ class Cart extends Model
         'status_cart',
         'status_pembayaran',
         'status_pengiriman',
+        'token',
         'no_resi',
         'ekspedisi',
         'subtotal',
