@@ -1,5 +1,3 @@
-@extends('layouts.template')
-@section('content')
 <div class="container-fluid">
   <div class="row">
     <div class="col col-lg-8 col-md-8 mb-2">
@@ -54,10 +52,6 @@
               </tbody>
             </table>
           </div>
-        </div>
-        <div class="card-footer">
-          <a href="{{ route('transaksi.index') }}" class="btn btn-sm btn-danger">Tutup</a>
-          <a href="{{ URL::to('transaksi/'.$itemcart->id.'/cetak_pdf') }}" class="btn btn-sm btn-warning">Cetak</a>
         </div>
       </div>
     </div>
@@ -142,4 +136,3 @@
     </div>
   </div>
 </div>
-@endsection

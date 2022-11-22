@@ -7,6 +7,7 @@ use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Models\AlamatPengiriman;
 use App\Http\Controllers\Controller;
+use PDF;
 
 class TransaksiController extends Controller
 {
@@ -175,5 +176,16 @@ class TransaksiController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function cetak_pdf($id)
+    {
+        $no = '0';
+        $itemcart = Cart::where('id', $id)->first();
+ 
+    	$pdf = PDF::loadview('transaksi.transaksi_pdf',[
+                    'itemcart'=>$itemcart,
+                    'no'=>$no])->setOptions(['defaultFont' => 'poppins']);
+    	return $pdf->download('laporan.pdf');
     }
 }

@@ -43,6 +43,7 @@
                         <div class="form-group mt-2">
                             <button type="submit" class="btn mb-4" style="background-color: #24FF00; color: white;">Login</button>
                             <p>Don't have an account? <a href="{{ route('register') }}" class="text-decoration-none">Sign up</a></p>
+                            <p>Forgot your password? <a href="{{ route('forget.password.get') }}" class="text-decoration-none">Reset</a></p>
                         </div>
                     </form>
                 </div>

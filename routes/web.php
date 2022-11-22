@@ -18,6 +18,7 @@ use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\CartDetailController;
 use App\Http\Controllers\ProdukPromoController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,6 +75,7 @@ Route::group(['middleware'=>'auth'], function() {
     Route::get('laporan', [\App\Http\Controllers\LaporanController::class,'index']);
     Route::get('proseslaporan', [\App\Http\Controllers\LaporanController::class,'proses']);
     Route::resource('transaksi', \App\Http\Controllers\TransaksiController::class);
+    Route::get('/transaksi/{id}/cetak_pdf', [\App\Http\Controllers\TransaksiController::class,'cetak_pdf']);
     
 });
 
@@ -86,3 +88,7 @@ Route::view('/account', 'account_set');
 Route::view('/dash', 'new_dash');
 Route::view('/checkout2', 'checkout');
 Route::view('/detail_produk', 'detail_produk');
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');

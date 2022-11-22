@@ -14,20 +14,6 @@
           </div>
         </div>
         <div class="card-body">
-          <form action="#">
-            <div class="row">
-              <div class="col">
-                <input type="text" name="keyword" id="keyword" class="form-control" placeholder="ketik keyword disini">
-              </div>
-              <div class="col-auto">
-                <button class="btn btn-primary">
-                  Cari
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="card-body">
           @if(count($errors) > 0)
           @foreach($errors->all() as $error)
               <div class="alert alert-warning">{{ $error }}</div>
@@ -52,7 +38,6 @@
               <thead>
                 <tr>
                   <th width="50px">No</th>
-                  <th>Gambar</th>
                   <th>Kode</th>
                   <th>Nama</th>
                   <th>Status</th>
@@ -64,30 +49,6 @@
                 <tr>
                   <td>
                   {{ ++$no }}
-                  </td>
-                  <td>
-                    @if($kategori->foto != null)
-                    <img src="{{ \Storage::url($kategori->foto) }}" alt="{{ $kategori->nama_kategori }}" width='150px' class="img-thumbnail mb-2">
-                    <br>
-                    <form action="{{ url('/admin/imagekategori/'.$kategori->id) }}" method="post" style="display:inline;">
-                      @csrf
-                      {{ method_field('delete') }}
-                      <button type="submit" class="btn btn-sm btn-danger mb-2">
-                        Hapus
-                      </button>                    
-                    </form>
-                    @else
-                    <form action="{{ url('/admin/imagekategori') }}" method="post" enctype="multipart/form-data" class="form-inline">
-                      @csrf
-                      <div class="form-group">
-                        <input type="file" name="image" id="image">
-                        <input type="hidden" name="kategori_id" value={{ $kategori->id }}>
-                      </div>
-                      <div class="form-group">
-                        <button class="btn btn-primary">Upload</button>
-                      </div>
-                    </form>
-                    @endif
                   </td>
                   <td>
                   {{ $kategori->kode_kategori }}
