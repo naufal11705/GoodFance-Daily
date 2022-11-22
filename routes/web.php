@@ -74,6 +74,7 @@ Route::group(['middleware'=>'auth'], function() {
     Route::get('laporan', [\App\Http\Controllers\LaporanController::class,'index']);
     Route::get('proseslaporan', [\App\Http\Controllers\LaporanController::class,'proses']);
     Route::resource('transaksi', \App\Http\Controllers\TransaksiController::class);
+    
 });
 
 Auth::routes();

@@ -57,6 +57,14 @@ class TransaksiController extends Controller
         }
     }
 
+    public function transaksidetail($id) 
+    {
+            $itemorder = Cart::where('id', $id);
+            $data = array('title' => 'Data Transaksi',
+                        'cartid' => $itemorder);
+            return view('transaksi.show', $data);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -114,7 +122,11 @@ class TransaksiController extends Controller
      */
     public function show($id)
     {
-        $data = array('title' => 'Detail Transaksi');
+        $no = 0;
+        $itemcart = Cart::where('id', $id)->first();
+        $data = array('title' => 'Detail Transaksi',
+                    'no' => $no,
+                    'itemcart' => $itemcart);
         return view('transaksi.show', $data);
     }
 

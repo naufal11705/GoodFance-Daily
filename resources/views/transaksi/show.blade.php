@@ -5,7 +5,7 @@
     <div class="col col-lg-8 col-md-8 mb-2">
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Item</h3>
+          <h3 class="card-title">Detail Transaksi</h3>
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -33,36 +33,22 @@
                 </tr>
               </thead>
               <tbody>
+              @foreach($itemcart->detail as $detail)
                 <tr>
-                  <td>1</td>
-                  <td>KATE-1</td>
-                  <td>Baju Anak</td>
-                  <td class="text-right">15.000</td>
-                  <td class="text-right">2</td>
-                  <td class="text-right">30.000</td>
+                  <td>{{ ++$no }}</td>
+                  <td>{{ $detail->produk->kode_produk }}</td>
+                  <td>{{ $detail->produk->nama_produk }}</td>
+                  <td class="text-right">{{ number_format($detail->produk->harga, 2) }}</td>
+                  <td class="text-right">{{ $detail->qty }}</td>
+                  <td class="text-right">{{ number_format($detail->subtotal, 2) }}</td>
                 </tr>
-                <tr>
-                  <td>2</td>
-                  <td>KATE-2</td>
-                  <td>Baju Anak</td>
-                  <td class="text-right">25.000</td>
-                  <td class="text-right">2</td>
-                  <td class="text-right">50.000</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>KATE-3</td>
-                  <td>Baju Anak</td>
-                  <td class="text-right">35.000</td>
-                  <td class="text-right">2</td>
-                  <td class="text-right">70.000</td>
-                </tr>
+              @endforeach
                 <tr>
                   <td colspan="5">
                     <b>Total</b>
                   </td>
                   <td class="text-right">
-                    <b>150.000</b>
+                    <b>{{ number_format($itemcart->subtotal, 2) }}</b>
                   </td>
                 </tr>
               </tbody>
@@ -88,7 +74,7 @@
                     Total
                   </td>
                   <td>
-                    127.000
+                    {{ number_format($itemcart->total, 2) }}
                   </td>
                 </tr>
                 <tr>
@@ -96,7 +82,7 @@
                     Subtotal
                   </td>
                   <td>
-                    150.000
+                    {{ number_format($itemcart->subtotal, 2) }}
                   </td>
                 </tr>
                 <tr>
@@ -104,7 +90,7 @@
                     Diskon
                   </td>
                   <td>
-                    0
+                    {{ number_format($itemcart->diskon, 2) }}
                   </td>
                 </tr>
                 <tr>
@@ -112,7 +98,7 @@
                     Ongkir
                   </td>
                   <td>
-                    27.000
+                    {{ number_format($itemcart->ongkir, 2) }}
                   </td>
                 </tr>
                 <tr>
@@ -120,7 +106,7 @@
                     Ekspedisi
                   </td>
                   <td>
-                    JNE
+                    {{ $itemcart->ekspedisi }}
                   </td>
                 </tr>
                 <tr>
@@ -128,7 +114,7 @@
                     No. Resi
                   </td>
                   <td>
-                    123123123123123
+                    {{ $itemcart->no_resi }}
                   </td>
                 </tr>
                 <tr>
@@ -136,7 +122,7 @@
                     Status Pembayaran
                   </td>
                   <td>
-                    Sudah dibayar
+                    {{ $itemcart->status_pembayaran }}
                   </td>
                 </tr>
                 <tr>
@@ -144,7 +130,7 @@
                     Status
                   </td>
                   <td>
-                    Dikirim
+                    {{ $itemcart->status_pengiriman }}
                   </td>
                 </tr>
               </tbody>

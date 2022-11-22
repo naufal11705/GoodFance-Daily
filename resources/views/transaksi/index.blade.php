@@ -1,6 +1,6 @@
 @extends('layouts.template')
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid" style="width: 92%; margin-top: 50px; margin-bottom: 50px;">
   <div class="row">
     <div class="col">
       <div class="card">
@@ -69,7 +69,7 @@
                     {{ $order->cart->status_pengiriman }}
                   </td>
                   <td>
-                    <a href="{{ route('transaksi.show', $order->id) }}" class="btn btn-sm btn-info mb-2">
+                    <a href="{{ route('transaksi.show', $order->cart->id) }}" class="btn btn-sm btn-info mb-2">
                       Detail
                     </a>
                     @if($itemuser->role == 'admin')

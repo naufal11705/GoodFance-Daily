@@ -62,7 +62,7 @@
                    @if($produk->foto != null)
                    <img src="{{ \Storage::url($produk->foto) }}" alt="{{ $produk->nama_kategori }}" width='150px' class="img-thumbnail mb-2">
                    <br>
-                   <form action="{{ url('/admin/produkimage/'.$produk->id) }}" method="post" style="display:inline;">
+                   <form action="{{ url('/seller/produkimage/'.$produk->id) }}" method="post" style="display:inline;">
                      @csrf
                      {{ method_field('delete') }}
                      <button type="submit" class="btn btn-sm btn-danger mb-2">
