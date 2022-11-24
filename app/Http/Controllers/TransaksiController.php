@@ -127,6 +127,7 @@ class TransaksiController extends Controller
     {
         $no = 0;
         $itemcart = Cart::where('id', $id)->first();
+        $itemorder = Order::where('cart_id', $id)->first();
         $detail = $itemcart->detail;
         \Midtrans\Config::$serverKey = 'SB-Mid-server-rCmYLZ93kPNmfms-1RiNaIrx';
         \Midtrans\Config::$isProduction = false;
@@ -135,25 +136,59 @@ class TransaksiController extends Controller
         if($itemcart->token == null){
         $params = array(
             'transaction_details' => array(
-                'order_id' => 'Fance-'.rand(),
+                'order_id' => $itemcart->no_invoice,
                 'gross_amount' => $itemcart->total,
             ),
             'customer_details' => array(
                 'first_name' => Auth::user()->name,
                 'email' => Auth::user()->email,
                 'phone' => Auth::user()->phone,
+                "shipping_address" => array(
+                    'first_name' => Auth::user()->name,
+                    'email' => Auth::user()->email,
+                    'phone' => Auth::user()->phone,
+                    'address' => $itemorder->alamat.', '.$itemorder->kelurahan.', '.$itemorder->kecamatan,
+                    'city' => $itemorder->kota,
+                    'postal_code' => $itemorder->kodepos,
+                ),
             ),
+
         );
         $snapToken = \Midtrans\Snap::getSnapToken($params);
         $itemcart->update(['token' => $snapToken]);
         } else {
             $snapToken = $itemcart->token; 
         }
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+          CURLOPT_URL => "https://api.sandbox.midtrans.com/v2/$itemcart->no_invoice/status",
+          CURLOPT_RETURNTRANSFER => true,
+          CURLOPT_ENCODING => "",
+          CURLOPT_MAXREDIRS => 10,
+          CURLOPT_TIMEOUT => 0,
+          CURLOPT_FOLLOWLOCATION => true,
+          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          CURLOPT_CUSTOMREQUEST => "GET",
+          CURLOPT_POSTFIELDS =>"\n\n",
+          CURLOPT_HTTPHEADER => array(
+            "Accept: application/json",
+            "Content-Type: application/json",
+            "Authorization: Basic U0ItTWlkLXNlcnZlci1yQ21ZTFo5M2tQTm1mbXMtMVJpTmFJcng6"
+          ),
+        ));
+        
+        $response = curl_exec($curl);   
+        curl_close($curl);
+        $json = json_decode($response);
+        if($json->status_code=='404'){
+        } else { $itemcart->update(['status_pembayaran' => $json->transaction_status]);}
         $data = array('title' => 'Detail Transaksi',
                     'no' => $no,
                     'itemcart' => $itemcart,
                     'snap_token' => $snapToken);
         return view('transaksi.show', $data);
+        //return $response;
 
     }
 
@@ -214,6 +249,11 @@ class TransaksiController extends Controller
                     'no'=>$no])->setOptions(['defaultFont' => 'poppins']);
                     
     	return $pdf->download('laporan.pdf');
+    }
+
+    public function payment_post(Request $request, $id)
+    {
+        return $request;
     }
 
 }
